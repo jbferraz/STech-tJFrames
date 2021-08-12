@@ -5,6 +5,8 @@
  */
 package tjframes;
 
+import java.awt.Color;
+import java.text.NumberFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -33,6 +35,8 @@ public class tjVitork extends javax.swing.JFrame {
         JbfIdade = new javax.swing.JTextField();
         jLabell = new javax.swing.JLabel();
         CalcDias = new javax.swing.JButton();
+        jbfResultado = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,21 +49,27 @@ public class tjVitork extends javax.swing.JFrame {
             }
         });
 
+        jbfResultado.setEditable(false);
+
+        jLabel1.setText("Resultado:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
+                .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(CalcDias)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(CalcDias)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabell, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(JbfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(103, 103, 103))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabell, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jbfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JbfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -68,9 +78,13 @@ public class tjVitork extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JbfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabell))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CalcDias)
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -91,11 +105,27 @@ public class tjVitork extends javax.swing.JFrame {
 
     private void CalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalcDiasActionPerformed
         // TODO add your handling code here:
-        int idade = Integer.parseInt(JbfIdade.getText());
-        JOptionPane.showMessageDialog(this,"Sua idade em dias e: "+(idade*365));
+        //jbfResultado.setText(Integer.toString(idade*365));
+        if(JbfIdade.getText().equalsIgnoreCase("")){
+            jbfResultado.setForeground(Color.red);
+            jbfResultado.setText("Não tem valor");
+            JbfIdade.requestFocus();
+        }else{
+            int idade = Integer.parseInt(JbfIdade.getText());
+            int dias = idade*365;
+        
+            if (dias >=0){
+                jbfResultado.setForeground(Color.BLACK);
+            } else{
+                jbfResultado.setForeground(Color.red);
+            }
+            
+        
+        jbfResultado.setText(NumberFormat.getInstance().format(idade*365));
+        JOptionPane.showMessageDialog(null,"Sua idade em dias e: "+(idade*365));
         JbfIdade.setText("");
     }//GEN-LAST:event_CalcDiasActionPerformed
-
+    }
     /**
      * @param args the command line arguments
      */
@@ -136,7 +166,9 @@ public class tjVitork extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CalcDias;
     private javax.swing.JTextField JbfIdade;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabell;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jbfResultado;
     // End of variables declaration//GEN-END:variables
 }
