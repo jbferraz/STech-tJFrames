@@ -51,7 +51,13 @@ public class jfThiago extends javax.swing.JFrame {
             }
         });
 
+        jtfIdade.setToolTipText("");
         jtfIdade.setName("jtfIdade"); // NOI18N
+        jtfIdade.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfIdadeKeyTyped(evt);
+            }
+        });
 
         jlResultado.setText("Resultado:");
 
@@ -95,11 +101,11 @@ public class jfThiago extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //private void bttnEnter
+
     private void jbCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcDiasActionPerformed
         // TODO add your handling code here:
         String aux = jtfIdade.getText();
-        int idade = Integer.parseInt(aux);
-        int dias = idade * 365;
 
         switch (aux.length()) {
             case 0:
@@ -107,7 +113,8 @@ public class jfThiago extends javax.swing.JFrame {
                 break;
 
             default:
-                if (idade > 0) {
+                int dias = (Integer.parseInt(aux) * 365);
+                if (dias > 0) {
                     jtfResultado.setForeground(Color.black);
                     jtfResultado.setText(Integer.toString(dias));
                     jtfIdade.requestFocus();
@@ -117,8 +124,18 @@ public class jfThiago extends javax.swing.JFrame {
                     jtfIdade.requestFocus();
                 }
         }
-        
+
     }//GEN-LAST:event_jbCalcDiasActionPerformed
+
+    private void jtfIdadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdadeKeyTyped
+        // TODO add your handling code here:
+        String caracteres = "0123456789-";
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_jtfIdadeKeyTyped
 
     /**
      * @param args the command line arguments
