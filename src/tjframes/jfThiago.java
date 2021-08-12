@@ -121,8 +121,10 @@ public class jfThiago extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 jfThiago tela = new jfThiago();
-                tela.setBounds(500, 320, 285, 150);
+                tela.setTitle("Calculadora de dias");
+                tela.setBounds(500, 320, 320, 150);
                 tela.setVisible(true);
                 
                 
