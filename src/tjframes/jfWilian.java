@@ -41,7 +41,7 @@ public class jfWilian extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("idade");
+        jLabel1.setText("Idade");
 
         jButton1.setText("Calcular Dias");
         jButton1.setName("jbCalcDias"); // NOI18N
