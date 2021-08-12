@@ -5,6 +5,8 @@
  */
 package tjframes;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Thiago
@@ -32,12 +34,19 @@ public class jfThiago extends javax.swing.JFrame {
         jtfIdade = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setName("tela"); // NOI18N
 
         jlIdade.setText("Idade:");
         jlIdade.setName("jlIdade"); // NOI18N
 
         jbCalcDias.setText("Calcular dias ");
         jbCalcDias.setName("jbCalcDias"); // NOI18N
+        jbCalcDias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCalcDiasActionPerformed(evt);
+            }
+        });
 
         jtfIdade.setName("jtfIdade"); // NOI18N
 
@@ -46,32 +55,42 @@ public class jfThiago extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
+                        .addGap(41, 41, 41)
                         .addComponent(jbCalcDias))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
                         .addComponent(jlIdade)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtfIdade)))
-                .addContainerGap(494, Short.MAX_VALUE))
+                        .addComponent(jtfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlIdade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbCalcDias)
-                .addContainerGap(353, Short.MAX_VALUE))
+                .addGap(32, 32, 32))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcDiasActionPerformed
+        // TODO add your handling code here:
+        short idade = Short.parseShort(jtfIdade.getText());
+        JOptionPane.showMessageDialog(this, "Sua idade em dias é " + (idade*365));
+        jtfIdade.setText("");
+        
+    }//GEN-LAST:event_jbCalcDiasActionPerformed
+
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -102,7 +121,11 @@ public class jfThiago extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new jfThiago().setVisible(true);
+                jfThiago tela = new jfThiago();
+                tela.setBounds(500, 320, 285, 150);
+                tela.setVisible(true);
+                
+                
             }
         });
     }
