@@ -92,7 +92,7 @@ public class tjVitork extends javax.swing.JFrame {
     private void CalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalcDiasActionPerformed
         // TODO add your handling code here:
         int idade = Integer.parseInt(JbfIdade.getText());
-        JOptionPane.showMessageDialog(this,"sua idade em dias e: "+(idade*365));
+        JOptionPane.showMessageDialog(this,"Sua idade em dias e: "+(idade*365));
         JbfIdade.setText("");
     }//GEN-LAST:event_CalcDiasActionPerformed
 
