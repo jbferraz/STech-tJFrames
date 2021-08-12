@@ -5,6 +5,8 @@
  */
 package tjframes;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Gabriel Lopes
@@ -92,7 +94,9 @@ public class jfGabriel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcDiasActionPerformed
-        // TODO add your handling code here:
+        int idade= Integer.parseInt(jtfIdade.getText());
+        JOptionPane.showMessageDialog(this, "Sua Idade em dias é: "+(idade*365)+" dias");
+        jtfIdade.setText("");
     }//GEN-LAST:event_jbCalcDiasActionPerformed
 
     /**
