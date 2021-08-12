@@ -47,6 +47,11 @@ public class jfWilian extends javax.swing.JFrame {
                 jtfidadeActionPerformed(evt);
             }
         });
+        jtfidade.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfidadeKeyTyped(evt);
+            }
+        });
 
         jLabel1.setText("Idade:");
 
@@ -133,25 +138,25 @@ public class jfWilian extends javax.swing.JFrame {
 
     private void jbCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcDiasActionPerformed
         // TODO add your handling code here:
-        
+
         if (jtfidade.getText().equalsIgnoreCase("")) {
             jtfResultado.setForeground(Color.red);
             jtfResultado.setText("Idade inválida!");
             jtfidade.requestFocus();
             jtfidade.setText("");
-            
-        }else{
+
+        } else {
             int idade = Integer.parseInt(jtfidade.getText());
-            int dias = idade *365;
-            if(dias <1){
-            jtfResultado.setForeground(Color.red);
-            jtfResultado.setText("Idade inválida!");
-            jtfidade.requestFocus();
-            jtfidade.setText("");
-            }else{
-               jtfResultado.setForeground(Color.BLACK);
-            jtfResultado.setText(NumberFormat.getInstance().format(dias));
-            jtfidade.setText(""); 
+            int dias = idade * 365;
+            if (dias < 1) {
+                jtfResultado.setForeground(Color.red);
+                jtfResultado.setText("Idade inválida!");
+                jtfidade.requestFocus();
+                jtfidade.setText("");
+            } else {
+                jtfResultado.setForeground(Color.BLACK);
+                jtfResultado.setText(NumberFormat.getInstance().format(dias));
+                jtfidade.setText("");
             }
         }
         //jtfResultado.setText(NumberFormat.getInstance().format(idade*365));
@@ -161,6 +166,15 @@ public class jfWilian extends javax.swing.JFrame {
     private void jtfResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfResultadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfResultadoActionPerformed
+
+    private void jtfidadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfidadeKeyTyped
+        // TODO add your handling code here:
+        String caracteres = "0123456789";
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_jtfidadeKeyTyped
 
     /**
      * @param args the command line arguments
