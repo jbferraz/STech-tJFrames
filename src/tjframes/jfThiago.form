@@ -59,14 +59,19 @@
     <Component class="javax.swing.JLabel" name="jlIdade">
       <Properties>
         <Property name="text" type="java.lang.String" value="Idade:"/>
+        <Property name="name" type="java.lang.String" value="jlIdade" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jbCalcDias">
       <Properties>
         <Property name="text" type="java.lang.String" value="Calcular dias "/>
+        <Property name="name" type="java.lang.String" value="jbCalcDias" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtfIdade">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="jtfIdade" noResource="true"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

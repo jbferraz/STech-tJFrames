@@ -34,8 +34,12 @@ public class jfThiago extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jlIdade.setText("Idade:");
+        jlIdade.setName("jlIdade"); // NOI18N
 
         jbCalcDias.setText("Calcular dias ");
+        jbCalcDias.setName("jbCalcDias"); // NOI18N
+
+        jtfIdade.setName("jtfIdade"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
