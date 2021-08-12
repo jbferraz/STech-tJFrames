@@ -28,23 +28,23 @@ public class jfWilian extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        jtfidade = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jbCalcDias = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setName("jtfIdade"); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jtfidade.setName("jtfIdade"); // NOI18N
+        jtfidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jtfidadeActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("idade");
+        jLabel1.setText("Idade:");
 
-        jButton1.setText("Calcular Dias");
-        jButton1.setName("jbCalcDias"); // NOI18N
+        jbCalcDias.setText("Calcular Dias");
+        jbCalcDias.setName("jbCalcDias"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -56,8 +56,8 @@ public class jfWilian extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1))
+                        .addComponent(jtfidade, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jbCalcDias))
                 .addContainerGap(254, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -65,10 +65,10 @@ public class jfWilian extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(jbCalcDias)
                 .addContainerGap(220, Short.MAX_VALUE))
         );
 
@@ -86,9 +86,9 @@ public class jfWilian extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jtfidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfidadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jtfidadeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,9 +126,9 @@ public class jfWilian extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jbCalcDias;
+    private javax.swing.JTextField jtfidade;
     // End of variables declaration//GEN-END:variables
 }
