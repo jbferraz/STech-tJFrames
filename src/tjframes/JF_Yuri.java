@@ -5,6 +5,8 @@
  */
 package tjframes;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author FNACPOA
@@ -40,6 +42,11 @@ public class JF_Yuri extends javax.swing.JFrame {
 
         JBCalcDias.setText("Calcular Dias");
         JBCalcDias.setName("JBCalcDias"); // NOI18N
+        JBCalcDias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBCalcDiasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -84,6 +91,13 @@ public class JF_Yuri extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JBCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCalcDiasActionPerformed
+        // TODO add your handling code here:
+        int idade = Integer.parseInt(JTF_Idade.getText());
+        JOptionPane.showMessageDialog(this, "Dua Idade em dias é: "+(idade*365));
+        JTF_Idade.setText("");
+    }//GEN-LAST:event_JBCalcDiasActionPerformed
 
     /**
      * @param args the command line arguments
