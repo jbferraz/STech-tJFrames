@@ -37,6 +37,7 @@ public class jfJair extends javax.swing.JFrame {
         jtfIdade.setName("jtfIdade"); // NOI18N
 
         jLabel1.setText("Idade:");
+        jLabel1.setName(""); // NOI18N
 
         jbCalcDias.setText("Calcular Dias");
         jbCalcDias.setName("jbCalcDias"); // NOI18N
