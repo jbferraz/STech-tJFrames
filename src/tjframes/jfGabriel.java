@@ -5,6 +5,7 @@
  */
 package tjframes;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -35,6 +36,8 @@ public class jfGabriel extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtfIdade = new javax.swing.JTextPane();
+        jlResultado = new javax.swing.JLabel();
+        jtfResultado = new javax.swing.JTextField();
 
         jButton1.setText("jButton1");
 
@@ -52,19 +55,30 @@ public class jfGabriel extends javax.swing.JFrame {
         jLabel1.setName("JTFIdade"); // NOI18N
 
         jScrollPane1.setName(""); // NOI18N
+
+        jtfIdade.setName(""); // NOI18N
         jScrollPane1.setViewportView(jtfIdade);
+
+        jlResultado.setText("Resultado:");
+
+        jtfResultado.setBackground(new java.awt.Color(255, 255, 255));
+        jtfResultado.setName("jtfResultado"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(77, 77, 77)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlResultado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbCalcDias))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jtfResultado, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jbCalcDias, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(163, 163, 163))
         );
         jPanel1Layout.setVerticalGroup(
@@ -74,9 +88,13 @@ public class jfGabriel extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(74, 74, 74)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlResultado)
+                    .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
                 .addComponent(jbCalcDias)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -94,11 +112,28 @@ public class jfGabriel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcDiasActionPerformed
-        int idade= Integer.parseInt(jtfIdade.getText());
-        JOptionPane.showMessageDialog(this, "Sua Idade em dias é: "+(idade*365)+" dias");
-        jtfIdade.setText("");
-    }//GEN-LAST:event_jbCalcDiasActionPerformed
+        if (jtfIdade.getText().equals("")) {
+            jtfResultado.setForeground(Color.red);
+            jtfResultado.setText("Idade Vazia");
+            
 
+        } else {
+            int idade = Integer.parseInt(jtfIdade.getText());
+            int dias = idade * 365;
+        
+        if (dias >= 0) {
+            jtfResultado.setForeground(Color.black);
+
+        } else {
+            jtfResultado.setForeground(Color.red);
+        }
+        jtfResultado.setText(Integer.toString(dias));
+        jtfIdade.setText("");
+        jtfResultado.requestFocus();
+        } jtfResultado.requestFocus();
+        
+    }//GEN-LAST:event_jbCalcDiasActionPerformed
+        
     /**
      * @param args the command line arguments
      */
@@ -134,12 +169,15 @@ public class jfGabriel extends javax.swing.JFrame {
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbCalcDias;
+    private javax.swing.JLabel jlResultado;
     private javax.swing.JTextPane jtfIdade;
+    private javax.swing.JTextField jtfResultado;
     // End of variables declaration//GEN-END:variables
 }
