@@ -95,7 +95,7 @@ public class jfWilian extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Só texto:");
+        jLabel2.setText("Só Texto:");
 
         jtSoTexto.setBackground(new java.awt.Color(255, 255, 255));
         jtSoTexto.setForeground(new java.awt.Color(0, 0, 0));

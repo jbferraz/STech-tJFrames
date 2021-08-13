@@ -182,7 +182,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="S&#xf3; texto:"/>
+            <Property name="text" type="java.lang.String" value="S&#xf3; Texto:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtSoTexto">
