@@ -6,7 +6,7 @@
 package tjframes;
 
 import java.awt.Color;
-import java.text.NumberFormat;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -36,7 +36,7 @@ public class jfJair extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jbCalcDias = new javax.swing.JButton();
         jtfResultado = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        jlResultado = new javax.swing.JLabel();
         jtfSomTexto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
@@ -45,6 +45,9 @@ public class jfJair extends javax.swing.JFrame {
         jtfIdade.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jtfIdade.setName("jtfIdade"); // NOI18N
         jtfIdade.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtfIdadeKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jtfIdadeKeyTyped(evt);
             }
@@ -64,7 +67,7 @@ public class jfJair extends javax.swing.JFrame {
         jtfResultado.setEditable(false);
         jtfResultado.setName("jtfResultado"); // NOI18N
 
-        jLabel2.setText("Resultado:");
+        jlResultado.setText("Resultado:");
 
         jtfSomTexto.setName("jtfSomTexto"); // NOI18N
         jtfSomTexto.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -86,7 +89,7 @@ public class jfJair extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jlResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -105,7 +108,7 @@ public class jfJair extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jlResultado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfSomTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,20 +139,15 @@ public class jfJair extends javax.swing.JFrame {
         if (jtfIdade.getText().equals("")) {
             jtfResultado.setForeground(Color.red);
             jtfResultado.setText("Idade vazia");
-            jtfIdade.requestFocus();
         } else {
             int idade = Integer.parseInt(jtfIdade.getText());
             int dias = idade * 365;
 
-            if (dias >= 0) {
-                jtfResultado.setForeground(Color.BLACK);
-            } else {
-                jtfResultado.setForeground(Color.red);
-            }
+            jtfResultado.setForeground(Color.BLACK);
             jtfResultado.setText(Integer.toString(dias));
             jtfIdade.setText("");
-            jtfIdade.requestFocus();
         }
+        jtfIdade.requestFocus();
     }//GEN-LAST:event_jbCalcDiasActionPerformed
 
     private void jtfIdadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdadeKeyTyped
@@ -157,6 +155,7 @@ public class jfJair extends javax.swing.JFrame {
         String caracteres = "0123456789";
         if (!caracteres.contains(evt.getKeyChar() + "")) {
             evt.consume();
+            JOptionPane.showMessageDialog(this, "Somente números!");
         }
     }//GEN-LAST:event_jtfIdadeKeyTyped
 
@@ -167,6 +166,13 @@ public class jfJair extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_jtfSomTextoKeyTyped
+
+    private void jtfIdadeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdadeKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            this.jbCalcDias.doClick();
+        }
+    }//GEN-LAST:event_jtfIdadeKeyPressed
 
     /**
      * @param args the command line arguments
@@ -205,10 +211,10 @@ public class jfJair extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbCalcDias;
+    private javax.swing.JLabel jlResultado;
     private javax.swing.JTextField jtfIdade;
     private javax.swing.JTextField jtfResultado;
     private javax.swing.JTextField jtfSomTexto;
