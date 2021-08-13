@@ -5,6 +5,10 @@
  */
 package tjframes;
 
+import java.awt.Color;
+import java.text.NumberFormat;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author wilian
@@ -30,7 +34,10 @@ public class jfWilian extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jtfidade = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jtfResultado = new javax.swing.JTextField();
         jbCalcDias = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,11 +47,34 @@ public class jfWilian extends javax.swing.JFrame {
                 jtfidadeActionPerformed(evt);
             }
         });
+        jtfidade.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfidadeKeyTyped(evt);
+            }
+        });
 
         jLabel1.setText("Idade:");
 
+        jLabel2.setText("Resultado : ");
+
+        jtfResultado.setEditable(false);
+        jtfResultado.setName("jtfIdade"); // NOI18N
+        jtfResultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfResultadoActionPerformed(evt);
+            }
+        });
+
         jbCalcDias.setText("Calcular Dias");
         jbCalcDias.setName("jbCalcDias"); // NOI18N
+        jbCalcDias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCalcDiasActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setText("Calcule sua idade");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -53,34 +83,50 @@ public class jfWilian extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtfidade, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jbCalcDias))
-                .addContainerGap(254, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jtfidade))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addGap(5, 5, 5)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jbCalcDias)
+                                .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel3))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addComponent(jLabel3)
+                .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbCalcDias)
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(8, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         pack();
@@ -89,6 +135,46 @@ public class jfWilian extends javax.swing.JFrame {
     private void jtfidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfidadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfidadeActionPerformed
+
+    private void jbCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcDiasActionPerformed
+        // TODO add your handling code here:
+
+        if (jtfidade.getText().equalsIgnoreCase("")) {
+            jtfResultado.setForeground(Color.red);
+            jtfResultado.setText("Idade inválida!");
+            jtfidade.requestFocus();
+            jtfidade.setText("");
+
+        } else {
+            int idade = Integer.parseInt(jtfidade.getText());
+            int dias = idade * 365;
+            if (dias < 1) {
+                jtfResultado.setForeground(Color.red);
+                jtfResultado.setText("Idade inválida!");
+                jtfidade.requestFocus();
+                jtfidade.setText("");
+            } else {
+                jtfResultado.setForeground(Color.BLACK);
+                jtfResultado.setText(NumberFormat.getInstance().format(dias));
+                jtfidade.setText("");
+            }
+        }
+        //jtfResultado.setText(NumberFormat.getInstance().format(idade*365));
+        //JOptionPane.showMessageDialog(this,"Sua idade em dias :"+ (idade *365));
+    }//GEN-LAST:event_jbCalcDiasActionPerformed
+
+    private void jtfResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfResultadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfResultadoActionPerformed
+
+    private void jtfidadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfidadeKeyTyped
+        // TODO add your handling code here:
+        String caracteres = "0123456789";
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_jtfidadeKeyTyped
 
     /**
      * @param args the command line arguments
@@ -127,8 +213,11 @@ public class jfWilian extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbCalcDias;
+    private javax.swing.JTextField jtfResultado;
     private javax.swing.JTextField jtfidade;
     // End of variables declaration//GEN-END:variables
 }

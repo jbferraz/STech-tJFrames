@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author jairb
+ * @author Igor
  */
-public class jfJair extends javax.swing.JFrame {
+public class jfIgor extends javax.swing.JFrame {
 
     /**
-     * Creates new form jfJair
+     * Creates new form jfIgor
      */
-    public jfJair() {
+    public jfIgor() {
         initComponents();
     }
 
@@ -32,26 +32,26 @@ public class jfJair extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jtfIdade = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jtfIdade = new javax.swing.JTextField();
         jbCalcDias = new javax.swing.JButton();
-        jtfResultado = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jtfResultado = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jtfIdade.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jtfIdade.setName("jtfIdade"); // NOI18N
-        jtfIdade.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jtfIdadeKeyTyped(evt);
-            }
-        });
 
         jLabel1.setText("Idade:");
         jLabel1.setName(""); // NOI18N
 
-        jbCalcDias.setText("Calcular Dias");
+        jtfIdade.setName("jtfidade"); // NOI18N
+        jtfIdade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfIdadeActionPerformed(evt);
+            }
+        });
+
+        jbCalcDias.setText("CalcularDias");
+        jbCalcDias.setToolTipText("");
         jbCalcDias.setName("jbCalcDias"); // NOI18N
         jbCalcDias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,90 +59,96 @@ public class jfJair extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("Resultado:");
+
         jtfResultado.setEditable(false);
         jtfResultado.setName("jtfResultado"); // NOI18N
-
-        jLabel2.setText("Resultado:");
+        jtfResultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfResultadoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(79, 79, 79)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jbCalcDias)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtfResultado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                            .addComponent(jtfIdade, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap(218, Short.MAX_VALUE))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jbCalcDias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jtfResultado)
+                    .addComponent(jtfIdade))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                .addGap(58, 58, 58)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jtfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(21, 21, 21)
                 .addComponent(jbCalcDias)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
-
-        jtfIdade.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 14, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jtfIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfIdadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfIdadeActionPerformed
+
     private void jbCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcDiasActionPerformed
         // TODO add your handling code here:
         if (jtfIdade.getText().equalsIgnoreCase("")) {
-            jtfResultado.setForeground(Color.red);
-            jtfResultado.setText("Idade vazia");
-            jtfIdade.requestFocus();
-        } else {
-            int idade = Integer.parseInt(jtfIdade.getText());
-            int dias = idade * 365;
-
-            if (dias >= 0) {
-                jtfResultado.setForeground(Color.BLACK);
-            } else {
-                jtfResultado.setForeground(Color.red);
-            }
-            jtfResultado.setText(Integer.toString(dias));
-            jtfIdade.setText("");
-            jtfIdade.requestFocus();
+           jtfResultado.setForeground(Color.red);
+           jtfResultado.setText("Dígite um valor");
+           jtfResultado.requestFocus();
+        }else {
+        
+        int idade= Integer.parseInt(jtfIdade.getText());
+        int dias = idade*365;
+        
+        if (dias>=0){
+        jtfResultado.setForeground(Color.black);
+        }else {
+           jtfResultado.setForeground(Color.red);
         }
-
+        jtfResultado.setText(Integer.toString(dias));                //IMPRESSÃO , EXEMPLO 14500 
+        jtfIdade.setText("");
+        jtfResultado.requestFocus();
     }//GEN-LAST:event_jbCalcDiasActionPerformed
-
-    private void jtfIdadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdadeKeyTyped
+   } 
+    
+    
+    private void jtfResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfResultadoActionPerformed
         // TODO add your handling code here:
-        String caracteres = "0123456789";
-        if(!caracteres.contains(evt.getKeyChar()+"")){
-            evt.consume();
-        }
-    }//GEN-LAST:event_jtfIdadeKeyTyped
+    }//GEN-LAST:event_jtfResultadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,20 +167,20 @@ public class jfJair extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(jfJair.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jfIgor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(jfJair.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jfIgor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(jfJair.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jfIgor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(jfJair.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jfIgor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new jfJair().setVisible(true);
+                new jfIgor().setVisible(true);
             }
         });
     }

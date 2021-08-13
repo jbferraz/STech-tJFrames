@@ -5,6 +5,7 @@
  */
 package tjframes;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,6 +33,8 @@ public class jfThiago extends javax.swing.JFrame {
         jlIdade = new javax.swing.JLabel();
         jbCalcDias = new javax.swing.JButton();
         jtfIdade = new javax.swing.JTextField();
+        jlResultado = new javax.swing.JLabel();
+        jtfResultado = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
@@ -48,49 +51,92 @@ public class jfThiago extends javax.swing.JFrame {
             }
         });
 
+        jtfIdade.setToolTipText("");
         jtfIdade.setName("jtfIdade"); // NOI18N
+        jtfIdade.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfIdadeKeyTyped(evt);
+            }
+        });
+
+        jlResultado.setText("Resultado:");
+
+        jtfResultado.setEditable(false);
+        jtfResultado.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jbCalcDias)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jbCalcDias))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jlIdade)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(95, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlResultado)
+                            .addComponent(jlIdade))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtfIdade, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                            .addComponent(jtfResultado))))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlIdade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jlIdade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jtfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbCalcDias)
-                .addGap(32, 32, 32))
+                .addGap(34, 34, 34))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //private void bttnEnter
+
     private void jbCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcDiasActionPerformed
         // TODO add your handling code here:
-        short idade = Short.parseShort(jtfIdade.getText());
-        JOptionPane.showMessageDialog(this, "Sua idade em dias é " + (idade*365));
-        jtfIdade.setText("");
-        
+        String aux = jtfIdade.getText();
+
+        switch (aux.length()) {
+            case 0:
+                JOptionPane.showMessageDialog(this, "Campo não pode ser em branco!");
+                break;
+
+            default:
+                int dias = (Integer.parseInt(aux) * 365);
+                if (dias > 0) {
+                    jtfResultado.setForeground(Color.black);
+                    jtfResultado.setText(Integer.toString(dias));
+                    jtfIdade.requestFocus();
+                } else {
+                    jtfResultado.setForeground(Color.red);
+                    jtfResultado.setText("Inválido");
+                    jtfIdade.requestFocus();
+                }
+        }
+
     }//GEN-LAST:event_jbCalcDiasActionPerformed
 
-    
-    
+    private void jtfIdadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdadeKeyTyped
+        // TODO add your handling code here:
+        String caracteres = "0123456789-";
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_jtfIdadeKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -121,11 +167,12 @@ public class jfThiago extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+
                 jfThiago tela = new jfThiago();
-                tela.setBounds(500, 320, 285, 150);
+                tela.setTitle("Calculadora de dias");
+                tela.setBounds(500, 320, 320, 210);
                 tela.setVisible(true);
-                
-                
+
             }
         });
     }
@@ -133,6 +180,8 @@ public class jfThiago extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jbCalcDias;
     private javax.swing.JLabel jlIdade;
+    private javax.swing.JLabel jlResultado;
     private javax.swing.JTextField jtfIdade;
+    private javax.swing.JTextField jtfResultado;
     // End of variables declaration//GEN-END:variables
 }
