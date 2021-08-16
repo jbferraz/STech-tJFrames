@@ -5,7 +5,8 @@
  */
 package tjframes;
 
-import javax.swing.JOptionPane;
+import java.awt.Color;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -33,12 +34,21 @@ public class JF_Yuri extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         JTF_Idade = new javax.swing.JTextField();
         JBCalcDias = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        JTF_Resultado = new javax.swing.JTextField();
+        SomenteTexto = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Idade");
 
         JTF_Idade.setName("JTF_Idade"); // NOI18N
+        JTF_Idade.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTF_IdadeKeyTyped(evt);
+            }
+        });
 
         JBCalcDias.setText("Calcular Dias");
         JBCalcDias.setName("JBCalcDias"); // NOI18N
@@ -48,19 +58,45 @@ public class JF_Yuri extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("Resultado");
+
+        JTF_Resultado.setName("JTF_Resultado"); // NOI18N
+
+        SomenteTexto.setText("Somente Texto");
+        SomenteTexto.setName("SomenteTexto"); // NOI18N
+        SomenteTexto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SomenteTextoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                SomenteTextoKeyTyped(evt);
+            }
+        });
+
+        jTextField1.setName("SomntTextoTexto"); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(JBCalcDias)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SomenteTexto, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JTF_Idade, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JTF_Idade, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(246, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JBCalcDias)
+                            .addComponent(JTF_Resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -69,9 +105,17 @@ public class JF_Yuri extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JTF_Idade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(JTF_Resultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SomenteTexto)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
                 .addComponent(JBCalcDias)
-                .addContainerGap(221, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -94,16 +138,47 @@ public class JF_Yuri extends javax.swing.JFrame {
 
     private void JBCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCalcDiasActionPerformed
         // TODO add your handling code here:
+        if(JTF_Idade.getText().equalsIgnoreCase("")){
+            JTF_Resultado.setForeground(Color.red);
+            JTF_Resultado.setText("Trate de Inserir Um Número");
+        }else{
         int idade = Integer.parseInt(JTF_Idade.getText());
-        JOptionPane.showMessageDialog(this, "Dua Idade em dias é: "+(idade*365));
+        int dias = idade * 365;
+        
+        if(dias>=0){
+            JTF_Resultado.setForeground(Color.black);
+        }else{
+            JTF_Resultado.setForeground(Color.red);
+        }
+        JTF_Resultado.setText(Integer.toString(dias));
         JTF_Idade.setText("");
+        }
+        JTF_Resultado.requestFocus();
     }//GEN-LAST:event_JBCalcDiasActionPerformed
 
-    /**
+    private void JTF_IdadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTF_IdadeKeyTyped
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+
+      this.JBCalcDias.doClick();
+
+    }        
+    }//GEN-LAST:event_JTF_IdadeKeyTyped
+
+    private void SomenteTextoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SomenteTextoKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SomenteTextoKeyPressed
+
+    private void SomenteTextoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SomenteTextoKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SomenteTextoKeyTyped
+
+    /**JOptionPane.showMessageDialog(this, "A Sua Idade em dias é: "+(idade*365));
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
+        System.out.println("");
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -125,19 +200,29 @@ public class JF_Yuri extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(JF_Yuri.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+System.out.println("");
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new JF_Yuri().setVisible(true);
+                System.out.println("");
+                System.out.println("");
             }
+            
         });
+        System.out.println("");
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBCalcDias;
     private javax.swing.JTextField JTF_Idade;
+    private javax.swing.JTextField JTF_Resultado;
+    private javax.swing.JLabel SomenteTexto;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
+
