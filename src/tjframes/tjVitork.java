@@ -212,7 +212,7 @@ String caracteres="0123456789";
       }else if (jrdbM2km.isSelected()){
          result = valors*1.6; 
       
-      JOptionPane.showMessageDialog(this,"O resultado e: " + result,"",
+      JOptionPane.showMessageDialog(this,"O resultado e: " + 
               NumberFormat.getInstance().format(result),
               "Conversão",JOptionPane.INFORMATION_MESSAGE);
   }else{
