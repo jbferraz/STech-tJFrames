@@ -7,7 +7,6 @@ package tjframes;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -179,6 +178,7 @@ public class JF_Yuri extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
+        System.out.println("");
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -205,56 +205,15 @@ System.out.println("");
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new JF_Yuri().setVisible(true);
+                System.out.println("");
+                System.out.println("");
             }
+            
         });
+        System.out.println("");
     }
 
-           
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBCalcDias;
     private javax.swing.JTextField JTF_Idade;
@@ -266,3 +225,4 @@ System.out.println("");
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
+
