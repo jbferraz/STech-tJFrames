@@ -74,10 +74,12 @@
                   <Component id="jtfValor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jlResultado" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                  <Component id="jtfResultado" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jrdbKm2m" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jlResultado" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="jtfResultado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jrdbM2Km" min="-2" max="-2" attributes="0"/>
@@ -136,12 +138,16 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtfValor">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtfValorKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jrdbKm2m">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="jbGroup"/>
         </Property>
+        <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="de Km para Milhas"/>
       </Properties>
     </Component>

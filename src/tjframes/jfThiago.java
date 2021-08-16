@@ -8,6 +8,7 @@ package tjframes;
 import com.sun.glass.events.KeyEvent;
 import java.awt.Color;
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -78,7 +79,14 @@ public class jfThiago extends javax.swing.JFrame {
 
         jlValor.setText("Valor");
 
+        jtfValor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfValorKeyTyped(evt);
+            }
+        });
+
         jbGroup.add(jrdbKm2m);
+        jrdbKm2m.setSelected(true);
         jrdbKm2m.setText("de Km para Milhas");
 
         jbGroup.add(jrdbM2Km);
@@ -130,10 +138,11 @@ public class jfThiago extends javax.swing.JFrame {
                     .addComponent(jlValor)
                     .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jrdbKm2m))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jrdbKm2m)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jlResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jrdbM2Km)
                 .addGap(18, 18, 18)
@@ -150,30 +159,40 @@ public class jfThiago extends javax.swing.JFrame {
 
     private void jbCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcDiasActionPerformed
         // TODO add your handling code here:
-        String aux = jtfIdade.getText();
+//        if (!jtfIdade.getText().equals("")) {
+//            int dias = (Integer.parseInt(jtfIdade.getText()) * 365);
+//            if (dias > 0) {
+//                jtfResultado.setForeground(Color.black);
+//                jtfResultado.setText(Integer.toString(dias));
+//                jtfIdade.requestFocus();
+//                jtfIdade.setText("");
+//            }
+//        } else {
+//            JOptionPane.showMessageDialog(this, "Campo não pode ser em branco!");
+//        }
 
-        switch (aux.length()) {
-            case 0:
-                JOptionPane.showMessageDialog(this, "Campo não pode ser em branco!");
-                break;
-
-                
-            default:
-                int dias = (Integer.parseInt(aux) * 365);
-                if (dias > 0) {
-                    jtfResultado.setForeground(Color.black);
-                    jtfResultado.setText(Integer.toString(dias));
-                    jtfIdade.requestFocus();
-                    jtfIdade.setText("");
-                } 
-                
+if (!jtfValor.getText().equals("")) {
+            double result = 0;
+            double valor = Double.parseDouble(jtfValor.getText());
+            
+            if (jrdbKm2m.isSelected()) {
+                result = valor / 1.6;
+            } else if (jrdbM2Km.isSelected()) {
+                result = valor * 1.6;
+            }
+            JOptionPane.showMessageDialog(this, "O resulado é: " + 
+                    NumberFormat.getInstance().format(result),
+                    "Conversão", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(this, "Valor não pode ser vazio");
+            jtfValor.requestFocus();
         }
 
     }//GEN-LAST:event_jbCalcDiasActionPerformed
 
     private void jtfIdadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdadeKeyTyped
         // TODO add your handling code here:
-        String caracteres = "0123456789-";
+        String caracteres = "0123456789";
         if (!caracteres.contains(evt.getKeyChar() + "")) {
             evt.consume();
 
@@ -181,7 +200,7 @@ public class jfThiago extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfIdadeKeyTyped
 
     private void jtfIdadeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdadeKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.jbCalcDias.doClick();
         }
     }//GEN-LAST:event_jtfIdadeKeyPressed
@@ -189,19 +208,30 @@ public class jfThiago extends javax.swing.JFrame {
     private void jbConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConverterActionPerformed
         DecimalFormat df = new DecimalFormat("0.00");
         double resultado = 0;
-        double valor = Double.parseDouble(jtfValor.getText());
         
-        if(jrdbKm2m.isSelected()){
-            resultado = valor/1.6;
-        } else if(jrdbM2Km.isSelected()){
-            resultado = valor*1.6;
-            
-            
+        if (!jtfValor.getText().equals("")) {
+            Double valor = Double.parseDouble(jtfValor.getText());
+
+            if (jrdbKm2m.isSelected()) {
+                resultado = (valor) / 1.6;
+            } else if (jrdbM2Km.isSelected()) {
+                resultado = (valor) * 1.6;
+            }
+            JOptionPane.showMessageDialog(this, "O resultado é " + df.format(resultado), "Conversão", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Campo não pode ser em branco!");
         }
-        JOptionPane.showMessageDialog(this, "O resultado é "+ df.format(resultado), "Conversão", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_jbConverterActionPerformed
 
         
+    }//GEN-LAST:event_jbConverterActionPerformed
+
+    private void jtfValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfValorKeyTyped
+        String caracteres = "0123456789";
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfValorKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -235,10 +265,9 @@ public class jfThiago extends javax.swing.JFrame {
 
                 jfThiago tela = new jfThiago();
                 tela.setTitle("Calculadora de dias");
-                
+
                 tela.setLocation(500, 320);
                 tela.setVisible(true);
-                
 
             }
         });
