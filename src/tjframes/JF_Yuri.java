@@ -134,6 +134,22 @@ public class JF_Yuri extends javax.swing.JFrame {
         });
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBCalcDias;
     private javax.swing.JTextField JTF_Idade;
