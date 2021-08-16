@@ -195,6 +195,8 @@ public class jfThiago extends javax.swing.JFrame {
             resultado = valor/1.6;
         } else if(jrdbM2Km.isSelected()){
             resultado = valor*1.6;
+            
+            
         }
         JOptionPane.showMessageDialog(this, "O resultado é "+ df.format(resultado), "Conversão", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jbConverterActionPerformed
@@ -236,6 +238,7 @@ public class jfThiago extends javax.swing.JFrame {
                 
                 tela.setLocation(500, 320);
                 tela.setVisible(true);
+                
 
             }
         });
