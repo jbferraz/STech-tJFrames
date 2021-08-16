@@ -5,6 +5,7 @@
  */
 package tjframes;
 
+import com.sun.glass.events.KeyEvent;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
@@ -54,6 +55,9 @@ public class jfThiago extends javax.swing.JFrame {
         jtfIdade.setToolTipText("");
         jtfIdade.setName("jtfIdade"); // NOI18N
         jtfIdade.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtfIdadeKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jtfIdadeKeyTyped(evt);
             }
@@ -118,11 +122,9 @@ public class jfThiago extends javax.swing.JFrame {
                     jtfResultado.setForeground(Color.black);
                     jtfResultado.setText(Integer.toString(dias));
                     jtfIdade.requestFocus();
-                } else {
-                    jtfResultado.setForeground(Color.red);
-                    jtfResultado.setText("Inválido");
-                    jtfIdade.requestFocus();
-                }
+                    jtfIdade.setText(""); 
+                } 
+                
         }
 
     }//GEN-LAST:event_jbCalcDiasActionPerformed
@@ -131,12 +133,18 @@ public class jfThiago extends javax.swing.JFrame {
         // TODO add your handling code here:
         String caracteres = "0123456789-";
         if (!caracteres.contains(evt.getKeyChar() + "")) {
-
             evt.consume();
 
         }
     }//GEN-LAST:event_jtfIdadeKeyTyped
 
+    private void jtfIdadeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdadeKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            this.jbCalcDias.doClick();
+        }
+    }//GEN-LAST:event_jtfIdadeKeyPressed
+
+        
     /**
      * @param args the command line arguments
      */
