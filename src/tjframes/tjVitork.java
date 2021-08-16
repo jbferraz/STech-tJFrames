@@ -75,6 +75,11 @@ public class tjVitork extends javax.swing.JFrame {
         jrdbM2km.setText("de Milhas para km");
 
         jtfConverter.setText("Converter");
+        jtfConverter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfConverterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -164,14 +169,14 @@ public class tjVitork extends javax.swing.JFrame {
             } else{
                 jbfResultado.setForeground(Color.red);
             }
-            
+        }
     
         //jbfResultado.setText(NumberFormat.getInstance().format(idade*365));
         //JOptionPane.showMessageDialog(null,"Sua idade em dias e: "+(idade*365));
         
         JbfIdade.requestFocus();
     }//GEN-LAST:event_jtfCalcDiasActionPerformed
-    }
+    
     private void JbfIdadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JbfIdadeKeyTyped
     String caracteres="0123456789";
     if(!caracteres.contains(evt.getKeyChar()+"")){
@@ -191,26 +196,33 @@ String caracteres="0123456789";
        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
            this.jtfCalcDias.doClick();
     }//GEN-LAST:event_JbfIdadeKeyPressed
-}
+    }
+    private void jtfConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfConverterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfConverterActionPerformed
+
+             
     private void jbConverterActionPerformed(java.awt.event.ActionEvent evt){
      if(!jtfValor.getText().equals("")){
        double result=0;
-      double valor = Double.perseDouble(jtfValor.getText());
-      
+       double valors = Double.parseDouble(jtfValor.getText());
+        
       if(jrdbKm2m.isSelected()){
-          result= valor/ 1.6;
+          result= valors/ 1.6;
       }else if (jrdbM2km.isSelected()){
-         result = valor*1.6; 
-      }  
-      JOptionPane.showMessageDialog(this,"O resultado e: "+ result ,
+         result = valors*1.6; 
+      
+      JOptionPane.showMessageDialog(this,"O resultado e: " + result,"",
               NumberFormat.getInstance().format(result),
               "Conversão",JOptionPane.INFORMATION_MESSAGE);
   }else{
    JOptionPane.showMessageDialog(this,"Valor nao pode ser vazio");
+      
    jtfValor.requestFocus();
-}
-}
-    
+        }
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
