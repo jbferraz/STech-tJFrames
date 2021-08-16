@@ -6,6 +6,8 @@
 package tjframes;
 
 import java.awt.Color;
+import java.awt.event.KeyEvent;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +21,7 @@ public class jfGabriel extends javax.swing.JFrame {
      */
     public jfGabriel() {
         initComponents();
+        
     }
 
     /**
@@ -30,7 +33,7 @@ public class jfGabriel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        grpConverte = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jbCalcDias = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -38,11 +41,29 @@ public class jfGabriel extends javax.swing.JFrame {
         jtfIdade = new javax.swing.JTextPane();
         jlResultado = new javax.swing.JLabel();
         jtfResultado = new javax.swing.JTextField();
-
-        jButton1.setText("jButton1");
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jtfValor = new javax.swing.JTextPane();
+        jrbKm2Milhas = new javax.swing.JRadioButton();
+        jrbMilhasParaKM = new javax.swing.JRadioButton();
+        JBconverter = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLimg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculadora JojoFag");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setName("Calculadora Jojo"); // NOI18N
+        jPanel1.setLayout(null);
+
+        jbCalcDias.setBackground(new java.awt.Color(51, 51, 255));
         jbCalcDias.setText("Calcular em Dias");
         jbCalcDias.setName("JBCalcDias"); // NOI18N
         jbCalcDias.addActionListener(new java.awt.event.ActionListener() {
@@ -50,89 +71,176 @@ public class jfGabriel extends javax.swing.JFrame {
                 jbCalcDiasActionPerformed(evt);
             }
         });
+        jPanel1.add(jbCalcDias);
+        jbCalcDias.setBounds(160, 150, 150, 40);
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Microsoft New Tai Lue", 0, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Idade");
         jLabel1.setName("JTFIdade"); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(77, 51, 37, 24);
 
         jScrollPane1.setName(""); // NOI18N
 
+        jtfIdade.setBackground(new java.awt.Color(255, 255, 255));
         jtfIdade.setName(""); // NOI18N
+        jtfIdade.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtfIdadeKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfIdadeKeyTyped(evt);
+            }
+        });
         jScrollPane1.setViewportView(jtfIdade);
 
-        jlResultado.setText("Resultado:");
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(205, 45, 118, 30);
 
+        jlResultado.setBackground(new java.awt.Color(255, 255, 255));
+        jlResultado.setFont(new java.awt.Font("Microsoft New Tai Lue", 0, 11)); // NOI18N
+        jlResultado.setForeground(new java.awt.Color(255, 255, 255));
+        jlResultado.setText("Resultado:");
+        jPanel1.add(jlResultado);
+        jlResultado.setBounds(77, 90, 55, 16);
+
+        jtfResultado.setEditable(false);
         jtfResultado.setBackground(new java.awt.Color(255, 255, 255));
         jtfResultado.setName("jtfResultado"); // NOI18N
+        jPanel1.add(jtfResultado);
+        jtfResultado.setBounds(205, 87, 114, 30);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlResultado))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jtfResultado, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jbCalcDias, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(163, 163, 163))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlResultado)
-                    .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addComponent(jbCalcDias)
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Valor:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(366, 36, 40, 24);
+
+        jtfValor.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setViewportView(jtfValor);
+
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(410, 36, 80, 30);
+
+        jrbKm2Milhas.setBackground(new java.awt.Color(0, 0, 0));
+        grpConverte.add(jrbKm2Milhas);
+        jrbKm2Milhas.setForeground(new java.awt.Color(255, 255, 255));
+        jrbKm2Milhas.setText("De Km Para Milhas");
+        jPanel1.add(jrbKm2Milhas);
+        jrbKm2Milhas.setBounds(373, 68, 114, 23);
+
+        jrbMilhasParaKM.setBackground(new java.awt.Color(0, 0, 0));
+        grpConverte.add(jrbMilhasParaKM);
+        jrbMilhasParaKM.setForeground(new java.awt.Color(255, 255, 255));
+        jrbMilhasParaKM.setText("De Milhas Para Km");
+        jrbMilhasParaKM.setName(""); // NOI18N
+        jrbMilhasParaKM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbMilhasParaKMActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jrbMilhasParaKM);
+        jrbMilhasParaKM.setBounds(373, 94, 114, 23);
+
+        JBconverter.setBackground(new java.awt.Color(255, 28, 28));
+        JBconverter.setText("Converter");
+        JBconverter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBconverterActionPerformed(evt);
+            }
+        });
+        jPanel1.add(JBconverter);
+        JBconverter.setBounds(394, 124, 82, 25);
+
+        jLabel3.setText("Calculo De Idade Em Dias");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(160, 12, 136, 15);
+
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Conversor de Milhas/km");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(356, 12, 141, 15);
+
+        jLimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Gabriel Lopes\\Desktop\\wp4694678.png")); // NOI18N
+        jPanel1.add(jLimg);
+        jLimg.setBounds(-90, 0, 700, 650);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 612, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void JBconverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBconverterActionPerformed
+        // TODO add your handling code here:
+        double result=0;
+        double valor=Double.parseDouble(jtfValor.getText());
+
+        if(jrbKm2Milhas.isSelected()){
+            result=valor/1.6;
+        }else if(jrbMilhasParaKM.isSelected()){
+            result= valor*1.6;
+        }
+        JOptionPane.showMessageDialog(this, "O Resultado é: "+result,"Conversão",JOptionPane.INFORMATION_MESSAGE );
+
+    }//GEN-LAST:event_JBconverterActionPerformed
+
+    private void jrbMilhasParaKMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbMilhasParaKMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jrbMilhasParaKMActionPerformed
+
+    private void jtfIdadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdadeKeyTyped
+        // TODO add your handling code here:
+        String caracteres = "0123456789";
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Somente Números");
+        }
+    }//GEN-LAST:event_jtfIdadeKeyTyped
+
+    private void jtfIdadeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdadeKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            this.jbCalcDias.doClick();
+        }
+    }//GEN-LAST:event_jtfIdadeKeyPressed
+
     private void jbCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcDiasActionPerformed
         if (jtfIdade.getText().equals("")) {
             jtfResultado.setForeground(Color.red);
             jtfResultado.setText("Idade Vazia");
-            
 
         } else {
             int idade = Integer.parseInt(jtfIdade.getText());
             int dias = idade * 365;
-        
-        if (dias >= 0) {
-            jtfResultado.setForeground(Color.black);
 
-        } else {
-            jtfResultado.setForeground(Color.red);
-        }
-        jtfResultado.setText(Integer.toString(dias));
-        jtfIdade.setText("");
-        jtfResultado.requestFocus();
+            if (dias >= 0) {
+                jtfResultado.setForeground(Color.black);
+
+            } else {
+                jtfResultado.setForeground(Color.red);
+            }
+            jtfResultado.setText(Integer.toString(dias));
+            jtfIdade.setText("");
+            jtfResultado.requestFocus();
         } jtfResultado.requestFocus();
-        
+
     }//GEN-LAST:event_jbCalcDiasActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+       ImageIcon icon= new ImageIcon("C:\\Users\\Gabriel Lopes\\Desktop\\wp4694678.png");
+       icon.setImage(icon.getImage().getScaledInstance(jLimg.getWidth(), jLimg.getHeight(),1));
+       jLimg.setIcon(icon);
+       
+    }//GEN-LAST:event_formWindowOpened
         
     /**
      * @param args the command line arguments
@@ -171,13 +279,22 @@ public class jfGabriel extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton JBconverter;
+    private javax.swing.ButtonGroup grpConverte;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLimg;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton jbCalcDias;
     private javax.swing.JLabel jlResultado;
+    private javax.swing.JRadioButton jrbKm2Milhas;
+    private javax.swing.JRadioButton jrbMilhasParaKM;
     private javax.swing.JTextPane jtfIdade;
     private javax.swing.JTextField jtfResultado;
+    private javax.swing.JTextPane jtfValor;
     // End of variables declaration//GEN-END:variables
 }
