@@ -7,6 +7,7 @@ package tjframes;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import java.text.NumberFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,6 +32,7 @@ public class jfJair extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grpConverte = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jtfIdade = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -39,8 +41,14 @@ public class jfJair extends javax.swing.JFrame {
         jlResultado = new javax.swing.JLabel();
         jtfSomTexto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jtfValor = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jrdbKm2m = new javax.swing.JRadioButton();
+        jrdbM2Km = new javax.swing.JRadioButton();
+        jbConverter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Teste JFrame");
 
         jtfIdade.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jtfIdade.setName("jtfIdade"); // NOI18N
@@ -78,6 +86,28 @@ public class jfJair extends javax.swing.JFrame {
 
         jLabel3.setText("Somente Texto");
 
+        jtfValor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfValorKeyTyped(evt);
+            }
+        });
+
+        jLabel2.setText("Valor");
+
+        grpConverte.add(jrdbKm2m);
+        jrdbKm2m.setSelected(true);
+        jrdbKm2m.setText("de Km para Milhas");
+
+        grpConverte.add(jrdbM2Km);
+        jrdbM2Km.setText("de Milhas para Km");
+
+        jbConverter.setText("Converter");
+        jbConverter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbConverterActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -96,7 +126,16 @@ public class jfJair extends javax.swing.JFrame {
                             .addComponent(jtfSomTexto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
                             .addComponent(jtfResultado, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jtfIdade, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtfValor))
+                    .addComponent(jrdbKm2m, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jrdbM2Km, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbConverter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,17 +143,23 @@ public class jfJair extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlResultado))
+                    .addComponent(jlResultado)
+                    .addComponent(jrdbKm2m))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfSomTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(jrdbM2Km))
                 .addGap(15, 15, 15)
-                .addComponent(jbCalcDias)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbCalcDias)
+                    .addComponent(jbConverter))
                 .addContainerGap(144, Short.MAX_VALUE))
         );
 
@@ -169,10 +214,38 @@ public class jfJair extends javax.swing.JFrame {
 
     private void jtfIdadeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdadeKeyPressed
         // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.jbCalcDias.doClick();
         }
     }//GEN-LAST:event_jtfIdadeKeyPressed
+
+    private void jbConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConverterActionPerformed
+        // TODO add your handling code here:
+        if (!jtfValor.getText().equals("")) {
+            double result = 0;
+            double valor = Double.parseDouble(jtfValor.getText());
+            
+            if (jrdbKm2m.isSelected()) {
+                result = valor / 1.6;
+            } else if (jrdbM2Km.isSelected()) {
+                result = valor * 1.6;
+            }
+            JOptionPane.showMessageDialog(this, "O resulado é: " + 
+                    NumberFormat.getInstance().format(result),
+                    "Conversão", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(this, "Valor não pode ser vazio");
+            jtfValor.requestFocus();
+        }
+    }//GEN-LAST:event_jbConverterActionPerformed
+
+    private void jtfValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfValorKeyTyped
+        // TODO add your handling code here:
+        String caracteres = "0123456789.";
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfValorKeyTyped
 
     /**
      * @param args the command line arguments
@@ -210,13 +283,19 @@ public class jfJair extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup grpConverte;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbCalcDias;
+    private javax.swing.JButton jbConverter;
     private javax.swing.JLabel jlResultado;
+    private javax.swing.JRadioButton jrdbKm2m;
+    private javax.swing.JRadioButton jrdbM2Km;
     private javax.swing.JTextField jtfIdade;
     private javax.swing.JTextField jtfResultado;
     private javax.swing.JTextField jtfSomTexto;
+    private javax.swing.JTextField jtfValor;
     // End of variables declaration//GEN-END:variables
 }
