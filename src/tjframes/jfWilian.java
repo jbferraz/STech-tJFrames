@@ -255,7 +255,8 @@ public class jfWilian extends javax.swing.JFrame {
 
         if (jtfidade.getText().equals("")) {
             jtfResultado.setForeground(Color.red);
-            jtfResultado.setText("Idade inválida!");
+            jtfResultado.setText("Idade em branco!");
+            JOptionPane.showMessageDialog(rootPane, "Idade não pode estár em branco!");
             jtfResultado.setText("");
 
         } else {
