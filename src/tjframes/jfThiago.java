@@ -164,10 +164,7 @@ public class jfThiago extends javax.swing.JFrame {
                     jtfResultado.setForeground(Color.black);
                     jtfResultado.setText(Integer.toString(dias));
                     jtfIdade.requestFocus();
-                    jtfIdade.setText(""); 
-                    
-                    
-                    
+                    jtfIdade.setText("");
                 } 
                 
         }
