@@ -123,11 +123,8 @@ public class jfThiago extends javax.swing.JFrame {
                     jtfResultado.setText(Integer.toString(dias));
                     jtfIdade.requestFocus();
                     jtfIdade.setText(""); 
-                } else {
-                    jtfResultado.setForeground(Color.red);
-                    jtfResultado.setText("Inválido");
-                    jtfIdade.requestFocus();
-                }
+                } 
+                
         }
 
     }//GEN-LAST:event_jbCalcDiasActionPerformed
