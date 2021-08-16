@@ -7,6 +7,7 @@ package tjframes;
 
 import com.sun.glass.events.KeyEvent;
 import java.awt.Color;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,11 +32,18 @@ public class jfThiago extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jbGroup = new javax.swing.ButtonGroup();
         jlIdade = new javax.swing.JLabel();
         jbCalcDias = new javax.swing.JButton();
         jtfIdade = new javax.swing.JTextField();
         jlResultado = new javax.swing.JLabel();
         jtfResultado = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jlValor = new javax.swing.JLabel();
+        jtfValor = new javax.swing.JTextField();
+        jrdbKm2m = new javax.swing.JRadioButton();
+        jrdbM2Km = new javax.swing.JRadioButton();
+        jbConverter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
@@ -68,23 +76,48 @@ public class jfThiago extends javax.swing.JFrame {
         jtfResultado.setEditable(false);
         jtfResultado.setRequestFocusEnabled(false);
 
+        jlValor.setText("Valor");
+
+        jbGroup.add(jrdbKm2m);
+        jrdbKm2m.setText("de Km para Milhas");
+
+        jbGroup.add(jrdbM2Km);
+        jrdbM2Km.setText("de Milhas para Km");
+
+        jbConverter.setText("Converter");
+        jbConverter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbConverterActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlResultado)
+                    .addComponent(jlIdade))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbCalcDias)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jtfIdade, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                        .addComponent(jtfResultado)))
+                .addGap(69, 69, 69)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlResultado)
-                            .addComponent(jlIdade))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtfIdade, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                            .addComponent(jtfResultado))))
-                .addContainerGap(81, Short.MAX_VALUE))
+                        .addComponent(jlValor)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jrdbKm2m)
+                    .addComponent(jrdbM2Km)
+                    .addComponent(jbConverter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,14 +125,22 @@ public class jfThiago extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlIdade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jtfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(jlValor)
+                    .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jrdbKm2m))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbCalcDias)
-                .addGap(34, 34, 34))
+                .addComponent(jrdbM2Km)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbConverter)
+                    .addComponent(jbCalcDias))
+                .addGap(33, 33, 33))
         );
 
         pack();
@@ -116,6 +157,7 @@ public class jfThiago extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Campo não pode ser em branco!");
                 break;
 
+                
             default:
                 int dias = (Integer.parseInt(aux) * 365);
                 if (dias > 0) {
@@ -143,6 +185,19 @@ public class jfThiago extends javax.swing.JFrame {
             this.jbCalcDias.doClick();
         }
     }//GEN-LAST:event_jtfIdadeKeyPressed
+
+    private void jbConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConverterActionPerformed
+        DecimalFormat df = new DecimalFormat("0.00");
+        double resultado = 0;
+        double valor = Double.parseDouble(jtfValor.getText());
+        
+        if(jrdbKm2m.isSelected()){
+            resultado = valor/1.6;
+        } else if(jrdbM2Km.isSelected()){
+            resultado = valor*1.6;
+        }
+        JOptionPane.showMessageDialog(this, "O resultado é "+ df.format(resultado), "Conversão", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jbConverterActionPerformed
 
         
     /**
@@ -178,7 +233,8 @@ public class jfThiago extends javax.swing.JFrame {
 
                 jfThiago tela = new jfThiago();
                 tela.setTitle("Calculadora de dias");
-                tela.setBounds(500, 320, 320, 210);
+                
+                tela.setLocation(500, 320);
                 tela.setVisible(true);
 
             }
@@ -186,10 +242,21 @@ public class jfThiago extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jbCalcDias;
+    private javax.swing.JButton jbConverter;
+    private javax.swing.ButtonGroup jbGroup;
     private javax.swing.JLabel jlIdade;
     private javax.swing.JLabel jlResultado;
+    private javax.swing.JLabel jlValor;
+    private javax.swing.JRadioButton jrdbKm2m;
+    private javax.swing.JRadioButton jrdbM2Km;
     private javax.swing.JTextField jtfIdade;
     private javax.swing.JTextField jtfResultado;
+    private javax.swing.JTextField jtfValor;
     // End of variables declaration//GEN-END:variables
+
+    private double dateFormat(double d, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
