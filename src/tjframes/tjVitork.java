@@ -32,6 +32,7 @@ public class tjVitork extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grpConverte = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         JbfIdade = new javax.swing.JTextField();
         jLabell = new javax.swing.JLabel();
@@ -39,13 +40,19 @@ public class tjVitork extends javax.swing.JFrame {
         jbfResultado = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jtfValor = new javax.swing.JTextField();
         jrdbKm2m = new javax.swing.JRadioButton();
         jrdbM2km = new javax.swing.JRadioButton();
-        jtfConverter = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jtfHacker = new javax.swing.JLabel();
+        jbConverter = new javax.swing.JButton();
+        jtfValor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
+
+        JbfIdade.setBackground(new java.awt.Color(255, 255, 255));
         JbfIdade.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 JbfIdadeKeyPressed(evt);
@@ -55,8 +62,11 @@ public class tjVitork extends javax.swing.JFrame {
             }
         });
 
+        jLabell.setForeground(new java.awt.Color(204, 204, 0));
         jLabell.setText("idade:");
 
+        jtfCalcDias.setBackground(new java.awt.Color(153, 153, 153));
+        jtfCalcDias.setForeground(new java.awt.Color(255, 0, 0));
         jtfCalcDias.setText("Calcular Dias");
         jtfCalcDias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,19 +75,42 @@ public class tjVitork extends javax.swing.JFrame {
         });
 
         jbfResultado.setEditable(false);
+        jbfResultado.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setForeground(new java.awt.Color(255, 153, 0));
         jLabel1.setText("Resultado:");
 
-        jLabel2.setText("Valor");
+        jLabel2.setForeground(new java.awt.Color(204, 153, 0));
+        jLabel2.setText("Valor:");
 
+        grpConverte.add(jrdbKm2m);
+        jrdbKm2m.setForeground(new java.awt.Color(255, 153, 0));
         jrdbKm2m.setText("de Km para Milhas");
+        jrdbKm2m.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrdbKm2mActionPerformed(evt);
+            }
+        });
 
+        grpConverte.add(jrdbM2km);
+        jrdbM2km.setForeground(new java.awt.Color(255, 153, 0));
         jrdbM2km.setText("de Milhas para km");
 
-        jtfConverter.setText("Converter");
-        jtfConverter.addActionListener(new java.awt.event.ActionListener() {
+        jLabel3.setText("jLabel3");
+
+        jbConverter.setBackground(new java.awt.Color(153, 153, 153));
+        jbConverter.setForeground(new java.awt.Color(255, 0, 0));
+        jbConverter.setText("Converter");
+        jbConverter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfConverterActionPerformed(evt);
+                jbConverterActionPerformed(evt);
+            }
+        });
+
+        jtfValor.setBackground(new java.awt.Color(255, 255, 255));
+        jtfValor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfValorKeyTyped(evt);
             }
         });
 
@@ -85,63 +118,77 @@ public class tjVitork extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(156, 156, 156))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jtfCalcDias)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabell, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jbfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JbfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jrdbKm2m, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jrdbM2km, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jtfConverter, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(13, 13, 13))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addGap(15, 15, 15)
-                        .addComponent(jtfValor)))
-                .addContainerGap())
+                            .addComponent(jrdbM2km, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbConverter, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jtfHacker))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jrdbKm2m)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jtfCalcDias)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabell, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jbfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JbfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JbfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jrdbKm2m)
                     .addComponent(jLabell))
                 .addGap(4, 4, 4)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jrdbM2km)
                     .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtfCalcDias)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfCalcDias)
-                    .addComponent(jtfConverter))
-                .addContainerGap(178, Short.MAX_VALUE))
+                    .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jrdbKm2m)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jrdbM2km)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(jbConverter))))
+                    .addComponent(jtfHacker, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,14 +216,18 @@ public class tjVitork extends javax.swing.JFrame {
             } else{
                 jbfResultado.setForeground(Color.red);
             }
-        }
+            jbfResultado.setText(Integer.toString(dias));
+            JbfIdade.setText("");
+            jbfResultado.requestFocus();
+         jbfResultado.requestFocus();
+        
     
         //jbfResultado.setText(NumberFormat.getInstance().format(idade*365));
-        //JOptionPane.showMessageDialog(null,"Sua idade em dias e: "+(idade*365));
+        JOptionPane.showMessageDialog(null,"Sua idade em dias e: "+(idade*365));
+        }
         
-        JbfIdade.requestFocus();
     }//GEN-LAST:event_jtfCalcDiasActionPerformed
-    
+        
     private void JbfIdadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JbfIdadeKeyTyped
     String caracteres="0123456789";
     if(!caracteres.contains(evt.getKeyChar()+"")){
@@ -197,31 +248,47 @@ String caracteres="0123456789";
            this.jtfCalcDias.doClick();
     }//GEN-LAST:event_JbfIdadeKeyPressed
     }
-    private void jtfConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfConverterActionPerformed
+    private void jrdbKm2mActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrdbKm2mActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtfConverterActionPerformed
+    }//GEN-LAST:event_jrdbKm2mActionPerformed
 
-             
-    private void jbConverterActionPerformed(java.awt.event.ActionEvent evt){
+    private void jtfValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfValorKeyTyped
+        String caracteres="0123456789.";
+    if(!caracteres.contains(evt.getKeyChar()+"")){
+    evt.consume();
+  }
+    }//GEN-LAST:event_jtfValorKeyTyped
+
+    private void jbConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConverterActionPerformed
+         
      if(!jtfValor.getText().equals("")){
+         
        double result=0;
-       double valors = Double.parseDouble(jtfValor.getText());
-        
+       double valor = Double.parseDouble(jtfValor.getText());
+     
       if(jrdbKm2m.isSelected()){
-          result= valors/ 1.6;
+          result= valor/ 1.6;
+          
       }else if (jrdbM2km.isSelected()){
-         result = valors*1.6; 
-      
-      JOptionPane.showMessageDialog(this,"O resultado e: " + 
+         result = valor*1.6; 
+      }
+      JOptionPane.showMessageDialog(this,"O resultado e: " +
               NumberFormat.getInstance().format(result),
               "Conversão",JOptionPane.INFORMATION_MESSAGE);
-  }else{
-   JOptionPane.showMessageDialog(this,"Valor nao pode ser vazio");
-      
+     
+     } else{
+         JOptionPane.showMessageDialog(this,"Valor nao pode ser vazio");
+      jtfValor.setText("");
    jtfValor.requestFocus();
         }
-        }
-    }
+    }//GEN-LAST:event_jbConverterActionPerformed
+
+              
+     
+     
+        
+    
+    
 
     /**
      * @param args the command line arguments
@@ -262,15 +329,18 @@ String caracteres="0123456789";
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JbfIdade;
+    private javax.swing.ButtonGroup grpConverte;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabell;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jbConverter;
     private javax.swing.JTextField jbfResultado;
     private javax.swing.JRadioButton jrdbKm2m;
     private javax.swing.JRadioButton jrdbM2km;
     private javax.swing.JButton jtfCalcDias;
-    private javax.swing.JButton jtfConverter;
+    private javax.swing.JLabel jtfHacker;
     private javax.swing.JTextField jtfValor;
     // End of variables declaration//GEN-END:variables
 }
