@@ -62,8 +62,10 @@ public class jfGabriel extends javax.swing.JFrame {
         });
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setMinimumSize(new java.awt.Dimension(800, 600));
         jPanel1.setName("Calculadora Jojo"); // NOI18N
-        jPanel1.setLayout(null);
+        jPanel1.setPreferredSize(new java.awt.Dimension(800, 600));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jbCalcDias.setBackground(new java.awt.Color(51, 51, 255));
         jbCalcDias.setText("Calcular em Dias");
@@ -73,16 +75,14 @@ public class jfGabriel extends javax.swing.JFrame {
                 jbCalcDiasActionPerformed(evt);
             }
         });
-        jPanel1.add(jbCalcDias);
-        jbCalcDias.setBounds(160, 150, 150, 40);
+        jPanel1.add(jbCalcDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 150, 40));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Microsoft New Tai Lue", 0, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Idade");
         jLabel1.setName("JTFIdade"); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(77, 51, 37, 24);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 51, 37, 24));
 
         jScrollPane1.setName(""); // NOI18N
 
@@ -98,40 +98,34 @@ public class jfGabriel extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtfIdade);
 
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(205, 45, 118, 30);
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 45, 118, 30));
 
         jlResultado.setBackground(new java.awt.Color(255, 255, 255));
         jlResultado.setFont(new java.awt.Font("Microsoft New Tai Lue", 0, 11)); // NOI18N
         jlResultado.setForeground(new java.awt.Color(255, 255, 255));
         jlResultado.setText("Resultado:");
-        jPanel1.add(jlResultado);
-        jlResultado.setBounds(77, 90, 55, 16);
+        jPanel1.add(jlResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 90, -1, -1));
 
         jtfResultado.setEditable(false);
         jtfResultado.setBackground(new java.awt.Color(255, 255, 255));
         jtfResultado.setName("jtfResultado"); // NOI18N
-        jPanel1.add(jtfResultado);
-        jtfResultado.setBounds(205, 87, 114, 30);
+        jPanel1.add(jtfResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 87, 114, 30));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Valor:");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(366, 36, 40, 24);
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 36, 40, 24));
 
         jtfValor.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setViewportView(jtfValor);
 
-        jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(410, 36, 80, 30);
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 36, 80, 30));
 
         jrbKm2Milhas.setBackground(new java.awt.Color(0, 0, 0));
         grpConverte.add(jrbKm2Milhas);
         jrbKm2Milhas.setForeground(new java.awt.Color(255, 255, 255));
         jrbKm2Milhas.setSelected(true);
         jrbKm2Milhas.setText("De Km Para Milhas");
-        jPanel1.add(jrbKm2Milhas);
-        jrbKm2Milhas.setBounds(373, 68, 114, 23);
+        jPanel1.add(jrbKm2Milhas, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 68, -1, -1));
 
         jrbMilhasParaKM.setBackground(new java.awt.Color(0, 0, 0));
         grpConverte.add(jrbMilhasParaKM);
@@ -143,8 +137,7 @@ public class jfGabriel extends javax.swing.JFrame {
                 jrbMilhasParaKMActionPerformed(evt);
             }
         });
-        jPanel1.add(jrbMilhasParaKM);
-        jrbMilhasParaKM.setBounds(373, 94, 114, 23);
+        jPanel1.add(jrbMilhasParaKM, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 94, -1, -1));
 
         JBconverter.setBackground(new java.awt.Color(255, 28, 28));
         JBconverter.setText("Converter");
@@ -153,18 +146,15 @@ public class jfGabriel extends javax.swing.JFrame {
                 JBconverterActionPerformed(evt);
             }
         });
-        jPanel1.add(JBconverter);
-        JBconverter.setBounds(394, 124, 82, 25);
+        jPanel1.add(JBconverter, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 124, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Calculo De Idade Em Dias");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(110, 20, 200, 15);
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 200, -1));
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Conversor de Milhas/km");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(356, 12, 141, 15);
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(356, 12, 141, -1));
 
         jcbEstCivil.setBackground(new java.awt.Color(153, 153, 153));
         jcbEstCivil.setForeground(new java.awt.Color(255, 204, 51));
@@ -174,13 +164,11 @@ public class jfGabriel extends javax.swing.JFrame {
                 jcbEstCivilActionPerformed(evt);
             }
         });
-        jPanel1.add(jcbEstCivil);
-        jcbEstCivil.setBounds(70, 210, 100, 24);
+        jPanel1.add(jcbEstCivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 100, -1));
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Estado Cíivil");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(10, 210, 70, 20);
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 70, 20));
 
         jbEstCivil.setForeground(new java.awt.Color(255, 255, 255));
         jbEstCivil.setText("Estado Civil?");
@@ -189,18 +177,19 @@ public class jfGabriel extends javax.swing.JFrame {
                 jbEstCivilActionPerformed(evt);
             }
         });
-        jPanel1.add(jbEstCivil);
-        jbEstCivil.setBounds(50, 250, 140, 25);
+        jPanel1.add(jbEstCivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 140, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 612, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -273,7 +262,7 @@ public class jfGabriel extends javax.swing.JFrame {
         if(jcbEstCivil.getSelectedItem().equals("Selecione")){
             JOptionPane.showMessageDialog(this, "Nenhum estado Cívil Selecionado");
             
-        }
+        }else
         JOptionPane.showMessageDialog(this, "Seu Estado cívil é: "+jcbEstCivil.getSelectedItem().toString());
     }//GEN-LAST:event_jbEstCivilActionPerformed
         
