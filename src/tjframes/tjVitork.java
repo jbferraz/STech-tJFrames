@@ -101,8 +101,18 @@ public class tjVitork extends javax.swing.JFrame {
         jbConverter.setBackground(new java.awt.Color(153, 153, 153));
         jbConverter.setForeground(new java.awt.Color(255, 0, 0));
         jbConverter.setText("Converter");
+        jbConverter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbConverterActionPerformed(evt);
+            }
+        });
 
         jtfValor.setBackground(new java.awt.Color(255, 255, 255));
+        jtfValor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfValorKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -242,10 +252,15 @@ String caracteres="0123456789";
         // TODO add your handling code here:
     }//GEN-LAST:event_jrdbKm2mActionPerformed
 
-              private void jrbMilhasParaKMActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
-    }  
-    private void jbConverterActionPerformed(java.awt.event.ActionEvent evt){
+    private void jtfValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfValorKeyTyped
+        String caracteres="0123456789.";
+    if(!caracteres.contains(evt.getKeyChar()+"")){
+    evt.consume();
+  }
+    }//GEN-LAST:event_jtfValorKeyTyped
+
+    private void jbConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConverterActionPerformed
+         
      if(!jtfValor.getText().equals("")){
          
        double result=0;
@@ -266,7 +281,12 @@ String caracteres="0123456789";
       jtfValor.setText("");
    jtfValor.requestFocus();
         }
-        }
+    }//GEN-LAST:event_jbConverterActionPerformed
+
+              
+     
+     
+        
     
     
 
