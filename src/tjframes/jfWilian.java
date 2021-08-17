@@ -142,12 +142,16 @@ public class jfWilian extends javax.swing.JFrame {
         jLabel4.setText("Valor:");
 
         ResultadoValor.setBackground(new java.awt.Color(255, 255, 255));
+        ResultadoValor.setForeground(new java.awt.Color(0, 0, 0));
         ResultadoValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ResultadoValorActionPerformed(evt);
             }
         });
         ResultadoValor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ResultadoValorKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 ResultadoValorKeyTyped(evt);
             }
@@ -298,7 +302,7 @@ public class jfWilian extends javax.swing.JFrame {
         String caracteres = "0123456789";
         if (!caracteres.contains(evt.getKeyChar() + "")) {
             evt.consume();
-            JOptionPane.showMessageDialog(rootPane, "Somente número!");
+
         }
     }//GEN-LAST:event_jtfidadeKeyTyped
 
@@ -311,7 +315,7 @@ public class jfWilian extends javax.swing.JFrame {
         String caracteres = "0123456789";
         if (caracteres.contains(evt.getKeyChar() + "")) {
             evt.consume();
-            JOptionPane.showMessageDialog(rootPane, "Somente Caractere!");
+
         }
     }//GEN-LAST:event_jtSoTextoKeyTyped
 
@@ -325,21 +329,21 @@ public class jfWilian extends javax.swing.JFrame {
 
     private void jbConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConverterActionPerformed
         // TODO add your handling code here:
-        if(!ResultadoValor.getText().equals("")){
-        double result = 0;
-        double valor = Double.parseDouble(ResultadoValor.getText());
-        if (jrdbKm2m.isSelected()) {
-            result = valor / 1.6;
-            ResultadoValor.setText("");
-        } else if (jrdbM2km.isSelected()) {
-            result = valor * 1.6;
-            ResultadoValor.setText("");
-        }
-        JOptionPane.showMessageDialog(rootPane, "O resultado é: " + NumberFormat.getInstance().format(result), "Resultado", JOptionPane.INFORMATION_MESSAGE);
-   }else{
+        if (!ResultadoValor.getText().equals("")) {
+            double result = 0;
+            double valor = Double.parseDouble(ResultadoValor.getText());
+            if (jrdbKm2m.isSelected()) {
+                result = valor / 1.6;
+                ResultadoValor.setText("");
+            } else if (jrdbM2km.isSelected()) {
+                result = valor * 1.6;
+                ResultadoValor.setText("");
+            }
+            JOptionPane.showMessageDialog(rootPane, "O resultado é: " + NumberFormat.getInstance().format(result), "Resultado", JOptionPane.INFORMATION_MESSAGE);
+        } else {
             JOptionPane.showMessageDialog(rootPane, "Valor não pode ser vazio!");
             ResultadoValor.requestFocus();
- 
+
         }
     }//GEN-LAST:event_jbConverterActionPerformed
 
@@ -348,14 +352,21 @@ public class jfWilian extends javax.swing.JFrame {
         String caracteres = "0123456789.";
         if (!caracteres.contains(evt.getKeyChar() + "")) {
             evt.consume();
-            JOptionPane.showMessageDialog(rootPane, "Somente número!");
+
         }
     }//GEN-LAST:event_ResultadoValorKeyTyped
 
     private void jrdbM2kmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrdbM2kmActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jrdbM2kmActionPerformed
-    
+
+    private void ResultadoValorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ResultadoValorKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+
+            this.jbConverter.doClick();
+        }
+    }//GEN-LAST:event_ResultadoValorKeyPressed
 
     /**
      * @param args the command line arguments
