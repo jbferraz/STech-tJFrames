@@ -9,6 +9,7 @@ import com.sun.glass.events.KeyEvent;
 import java.awt.Color;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -45,9 +46,14 @@ public class jfThiago extends javax.swing.JFrame {
         jrdbKm2m = new javax.swing.JRadioButton();
         jrdbM2Km = new javax.swing.JRadioButton();
         jbConverter = new javax.swing.JButton();
+        jcbEstCivil = new javax.swing.JComboBox<>();
+        jlEstCivil = new javax.swing.JLabel();
+        jbEstCivil = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setForeground(java.awt.Color.white);
         setName("tela"); // NOI18N
 
         jlIdade.setText("Idade:");
@@ -99,21 +105,43 @@ public class jfThiago extends javax.swing.JFrame {
             }
         });
 
+        jcbEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Solteiro(a)", "Casado(a)", "Divorciado(a)", "Viúvo(a)" }));
+        jcbEstCivil.setToolTipText("");
+        jcbEstCivil.setName(""); // NOI18N
+
+        jlEstCivil.setText("Estado Civil");
+
+        jbEstCivil.setText("Estado Civil?");
+        jbEstCivil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEstCivilActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlResultado)
-                    .addComponent(jlIdade))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbCalcDias)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jtfIdade, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                        .addComponent(jtfResultado)))
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlResultado)
+                            .addComponent(jlIdade))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jbCalcDias)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jtfIdade, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                                .addComponent(jtfResultado))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jlEstCivil)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jbEstCivil)
+                            .addComponent(jcbEstCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1, 1, 1)))
                 .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
@@ -125,7 +153,7 @@ public class jfThiago extends javax.swing.JFrame {
                     .addComponent(jrdbKm2m)
                     .addComponent(jrdbM2Km)
                     .addComponent(jbConverter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +177,13 @@ public class jfThiago extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbConverter)
                     .addComponent(jbCalcDias))
-                .addGap(33, 33, 33))
+                .addGap(74, 74, 74)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlEstCivil)
+                    .addComponent(jcbEstCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jbEstCivil)
+                .addGap(67, 67, 67))
         );
 
         pack();
@@ -159,32 +193,12 @@ public class jfThiago extends javax.swing.JFrame {
 
     private void jbCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcDiasActionPerformed
         // TODO add your handling code here:
-//        if (!jtfIdade.getText().equals("")) {
-//            int dias = (Integer.parseInt(jtfIdade.getText()) * 365);
-//            if (dias > 0) {
-//                jtfResultado.setForeground(Color.black);
-//                jtfResultado.setText(Integer.toString(dias));
-//                jtfIdade.requestFocus();
-//                jtfIdade.setText("");
-//            }
-//        } else {
-//            JOptionPane.showMessageDialog(this, "Campo não pode ser em branco!");
-//        }
 
-if (!jtfValor.getText().equals("")) {
-            double result = 0;
-            double valor = Double.parseDouble(jtfValor.getText());
-            
-            if (jrdbKm2m.isSelected()) {
-                result = valor / 1.6;
-            } else if (jrdbM2Km.isSelected()) {
-                result = valor * 1.6;
-            }
-            JOptionPane.showMessageDialog(this, "O resulado é: " + 
-                    NumberFormat.getInstance().format(result),
-                    "Conversão", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-            JOptionPane.showMessageDialog(this, "Valor não pode ser vazio");
+        if (!jtfIdade.getText().equals("")) {
+            short idade = Short.parseShort(jtfIdade.getText());
+            jtfResultado.setText(Integer.toString(idade*365));
+        } else {
+            JOptionPane.showMessageDialog(this, "O campo não pode estar vazio");
             jtfValor.requestFocus();
         }
 
@@ -208,7 +222,7 @@ if (!jtfValor.getText().equals("")) {
     private void jbConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConverterActionPerformed
         DecimalFormat df = new DecimalFormat("0.00");
         double resultado = 0;
-        
+
         if (!jtfValor.getText().equals("")) {
             Double valor = Double.parseDouble(jtfValor.getText());
 
@@ -219,18 +233,25 @@ if (!jtfValor.getText().equals("")) {
             }
             JOptionPane.showMessageDialog(this, "O resultado é " + df.format(resultado), "Conversão", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(this, "Campo não pode ser em branco!");
+            JOptionPane.showMessageDialog(this, "O campo não pode estar vazio");
         }
 
-        
+
     }//GEN-LAST:event_jbConverterActionPerformed
 
     private void jtfValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfValorKeyTyped
-        String caracteres = "0123456789";
+        String caracteres = "0123456789.";
         if (!caracteres.contains(evt.getKeyChar() + "")) {
             evt.consume();
         }
     }//GEN-LAST:event_jtfValorKeyTyped
+
+    private void jbEstCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEstCivilActionPerformed
+        // TODO add your handling code here:
+        if(!jcbEstCivil.getSelectedItem().equals("Selecione")){
+            JOptionPane.showMessageDialog(this, "O estado civil é " + jcbEstCivil.getSelectedItem());
+        }
+    }//GEN-LAST:event_jbEstCivilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -262,11 +283,12 @@ if (!jtfValor.getText().equals("")) {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                //ImageIcon icon = new ImageIcon(imagem.png);
 
                 jfThiago tela = new jfThiago();
                 tela.setTitle("Calculadora de dias");
 
-                tela.setLocation(500, 320);
+                tela.setLocation(450, 200);
                 tela.setVisible(true);
 
             }
@@ -277,7 +299,10 @@ if (!jtfValor.getText().equals("")) {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jbCalcDias;
     private javax.swing.JButton jbConverter;
+    private javax.swing.JButton jbEstCivil;
     private javax.swing.ButtonGroup jbGroup;
+    private javax.swing.JComboBox<String> jcbEstCivil;
+    private javax.swing.JLabel jlEstCivil;
     private javax.swing.JLabel jlIdade;
     private javax.swing.JLabel jlResultado;
     private javax.swing.JLabel jlValor;
