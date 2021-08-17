@@ -46,6 +46,9 @@ public class jfJair extends javax.swing.JFrame {
         jrdbKm2m = new javax.swing.JRadioButton();
         jrdbM2Km = new javax.swing.JRadioButton();
         jbConverter = new javax.swing.JButton();
+        jcbEstCivil = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        jbEstCivil = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Teste JFrame");
@@ -108,6 +111,17 @@ public class jfJair extends javax.swing.JFrame {
             }
         });
 
+        jcbEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Solteiro (a)", "Casado (a)", "Divorciado (a)", "Viuvo (a)", "Amizade Colorida kkkk" }));
+
+        jLabel4.setText("Estado Civil");
+
+        jbEstCivil.setText("Estado Civil?");
+        jbEstCivil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEstCivilActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -115,15 +129,18 @@ public class jfJair extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jbEstCivil)
                     .addComponent(jbCalcDias)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jlResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtfSomTexto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                            .addComponent(jcbEstCivil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jtfSomTexto, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jtfResultado, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jtfIdade, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addGap(52, 52, 52)
@@ -135,7 +152,7 @@ public class jfJair extends javax.swing.JFrame {
                     .addComponent(jrdbKm2m, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jrdbM2Km, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbConverter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,7 +177,13 @@ public class jfJair extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbCalcDias)
                     .addComponent(jbConverter))
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jcbEstCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jbEstCivil)
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         jtfIdade.getAccessibleContext().setAccessibleName("");
@@ -224,16 +247,16 @@ public class jfJair extends javax.swing.JFrame {
         if (!jtfValor.getText().equals("")) {
             double result = 0;
             double valor = Double.parseDouble(jtfValor.getText());
-            
+
             if (jrdbKm2m.isSelected()) {
                 result = valor / 1.6;
             } else if (jrdbM2Km.isSelected()) {
                 result = valor * 1.6;
             }
-            JOptionPane.showMessageDialog(this, "O resulado é: " + 
-                    NumberFormat.getInstance().format(result),
+            JOptionPane.showMessageDialog(this, "O resulado é: "
+                    + NumberFormat.getInstance().format(result),
                     "Conversão", JOptionPane.INFORMATION_MESSAGE);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "Valor não pode ser vazio");
             jtfValor.requestFocus();
         }
@@ -246,6 +269,16 @@ public class jfJair extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_jtfValorKeyTyped
+
+    private void jbEstCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEstCivilActionPerformed
+        // TODO add your handling code here:
+        if (jcbEstCivil.getSelectedItem().equals("Selecione")) {
+            JOptionPane.showMessageDialog(this, "Nenhum estado civil selecionado!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Estado Civil é "
+                + jcbEstCivil.getSelectedItem().toString());
+        }
+    }//GEN-LAST:event_jbEstCivilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,9 +320,12 @@ public class jfJair extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbCalcDias;
     private javax.swing.JButton jbConverter;
+    private javax.swing.JButton jbEstCivil;
+    private javax.swing.JComboBox<String> jcbEstCivil;
     private javax.swing.JLabel jlResultado;
     private javax.swing.JRadioButton jrdbKm2m;
     private javax.swing.JRadioButton jrdbM2Km;
