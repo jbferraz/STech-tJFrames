@@ -53,6 +53,7 @@ public class tjVitork extends javax.swing.JFrame {
         jbcEstadoCivil = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jbCivil = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,7 +105,7 @@ public class tjVitork extends javax.swing.JFrame {
         jrdbM2km.setText("de Milhas para km");
 
         jpgHackerr.setIcon(new javax.swing.ImageIcon("C:\\Users\\everton\\Downloads\\pc-hack.gif")); // NOI18N
-        jpgHackerr.setText("jLabel3");
+        jpgHackerr.setText("voce foi hackeado");
 
         jbConverter.setBackground(new java.awt.Color(153, 153, 153));
         jbConverter.setForeground(new java.awt.Color(255, 0, 0));
@@ -137,6 +138,15 @@ public class tjVitork extends javax.swing.JFrame {
         jbCivil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbCivilActionPerformed(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(153, 153, 153));
+        jButton1.setForeground(new java.awt.Color(255, 0, 0));
+        jButton1.setText("Hacker");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -173,7 +183,9 @@ public class tjVitork extends javax.swing.JFrame {
                                     .addComponent(jrdbKm2m))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
+                        .addGap(43, 43, 43)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jpgHackerr, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,7 +240,9 @@ public class tjVitork extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jtfCalcDias)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jpgHackerr, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jpgHackerr, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton1)))
                             .addComponent(jbConverter)))
                     .addComponent(jtfHacker, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
@@ -340,7 +354,13 @@ String caracteres="0123456789";
             JOptionPane.showMessageDialog(this,"Estado Civil e "+
                 jbcEstadoCivil.getSelectedItem().toString());
     }//GEN-LAST:event_jbCivilActionPerformed
-    }    
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       JOptionPane.showMessageDialog(this,jpgHackerr);
+               jpgHackerr.setIcon(new javax.swing.ImageIcon("C:\\Users\\everton\\Downloads\\pc-hack.gif"));// NOI18N
+               jpgHackerr.getIcon();
+    }//GEN-LAST:event_jButton1ActionPerformed
+        
               
      
      
@@ -388,6 +408,7 @@ String caracteres="0123456789";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JbfIdade;
     private javax.swing.ButtonGroup grpConverte;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
