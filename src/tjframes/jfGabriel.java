@@ -126,6 +126,7 @@ public class jfGabriel extends javax.swing.JFrame {
         jrbKm2Milhas.setBackground(new java.awt.Color(0, 0, 0));
         grpConverte.add(jrbKm2Milhas);
         jrbKm2Milhas.setForeground(new java.awt.Color(255, 255, 255));
+        jrbKm2Milhas.setSelected(true);
         jrbKm2Milhas.setText("De Km Para Milhas");
         jPanel1.add(jrbKm2Milhas);
         jrbKm2Milhas.setBounds(373, 68, 114, 23);
@@ -153,9 +154,10 @@ public class jfGabriel extends javax.swing.JFrame {
         jPanel1.add(JBconverter);
         JBconverter.setBounds(394, 124, 82, 25);
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Calculo De Idade Em Dias");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(160, 12, 136, 15);
+        jLabel3.setBounds(110, 20, 200, 15);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Conversor de Milhas/km");
@@ -164,7 +166,7 @@ public class jfGabriel extends javax.swing.JFrame {
 
         jLimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Gabriel Lopes\\Desktop\\wp4694678.png")); // NOI18N
         jPanel1.add(jLimg);
-        jLimg.setBounds(-90, 0, 700, 650);
+        jLimg.setBounds(0, 0, 610, 570);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -236,7 +238,7 @@ public class jfGabriel extends javax.swing.JFrame {
     }//GEN-LAST:event_jbCalcDiasActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-       ImageIcon icon= new ImageIcon("C:\\Users\\Gabriel Lopes\\Desktop\\wp4694678.png");
+       ImageIcon icon= new ImageIcon("tjframes/wp4694678.png");
        icon.setImage(icon.getImage().getScaledInstance(jLimg.getWidth(), jLimg.getHeight(),1));
        jLimg.setIcon(icon);
        
