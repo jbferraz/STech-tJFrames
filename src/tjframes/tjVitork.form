@@ -385,6 +385,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Futebol"/>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jbcFutebolItemStateChanged"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -404,6 +407,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Volei"/>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jbcVoleiItemStateChanged"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="jbcBasquete">
           <Properties>
@@ -416,6 +422,7 @@
             <Property name="text" type="java.lang.String" value="Basquete"/>
           </Properties>
           <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jbcBasqueteItemStateChanged"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbcBasqueteActionPerformed"/>
           </Events>
         </Component>

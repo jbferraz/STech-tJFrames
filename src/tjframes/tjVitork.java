@@ -147,15 +147,30 @@ public class tjVitork extends javax.swing.JFrame {
 
         jbcFutebol.setForeground(new java.awt.Color(51, 255, 51));
         jbcFutebol.setText("Futebol");
+        jbcFutebol.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jbcFutebolItemStateChanged(evt);
+            }
+        });
 
         jLabel3.setForeground(new java.awt.Color(255, 204, 0));
         jLabel3.setText("Quais esportes voce pratica?");
 
         jbcVolei.setForeground(new java.awt.Color(51, 255, 51));
         jbcVolei.setText("Volei");
+        jbcVolei.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jbcVoleiItemStateChanged(evt);
+            }
+        });
 
         jbcBasquete.setForeground(new java.awt.Color(51, 255, 51));
         jbcBasquete.setText("Basquete");
+        jbcBasquete.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jbcBasqueteItemStateChanged(evt);
+            }
+        });
         jbcBasquete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbcBasqueteActionPerformed(evt);
@@ -426,25 +441,66 @@ String caracteres="0123456789";
     }//GEN-LAST:event_jpgHackerrInputMethodTextChanged
 
     private void jbcListarEsportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbcListarEsportesActionPerformed
-       if(jcvListar.getText().equals("")){ 
-           jcvListar.setText("Vc selecionou nenhum esporte");
-       }
-       if(jbcFutebol.isSelected()){
-         jcvListar.setText("Futebol");
-       }else if(jbcVolei.isSelected()){
-        jcvListar.setText("Volei");
-    }
-       if(jbcBasquete.isSelected()){
-           jcvListar.setText("Basquete");
-       }
-       if(jbcFutebol.isSelected()||jbcVolei.isSelected()||jbcBasquete.isSelected()){
-           jcvListar.setText("Voce selecionou todos os esportes"); 
+       if (jcvListar.getText().equals("")){
+           JOptionPane.showMessageDialog(this,"Vc selecionou nada");
        }
     }//GEN-LAST:event_jbcListarEsportesActionPerformed
     
     private void jbcBasqueteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbcBasqueteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbcBasqueteActionPerformed
+
+    private void jbcFutebolItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jbcFutebolItemStateChanged
+       String esporte = jcvListar.getText();
+        String texto = jbcFutebol.getText( )+"\n";
+        
+        if(jbcFutebol.isSelected()){
+
+      jcvListar.setText(esporte + texto);
+
+    }else{
+
+      esporte= esporte.replace(texto, "");
+
+      jcvListar.setText(esporte);
+
+    }
+    }//GEN-LAST:event_jbcFutebolItemStateChanged
+
+    private void jbcVoleiItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jbcVoleiItemStateChanged
+        String esporte = jcvListar.getText();
+        String texto = jbcVolei.getText( )+"\n";
+        
+        if(jbcVolei.isSelected()){
+
+      jcvListar.setText(esporte + texto);
+
+    }else{
+
+      esporte= esporte.replace(texto, "");
+
+      jcvListar.setText(esporte);
+
+    }
+    }//GEN-LAST:event_jbcVoleiItemStateChanged
+
+    private void jbcBasqueteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jbcBasqueteItemStateChanged
+        String esporte = jcvListar.getText();
+        String texto = jbcBasquete.getText( )+"\n";
+        
+        if(jbcBasquete.isSelected())
+            {
+
+      jcvListar.setText(esporte + texto);
+
+    }else{
+
+      esporte= esporte.replace(texto, "");
+
+      jcvListar.setText(esporte);
+
+    }
+    }//GEN-LAST:event_jbcBasqueteItemStateChanged
            
               
     
