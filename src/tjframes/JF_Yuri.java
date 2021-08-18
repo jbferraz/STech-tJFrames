@@ -303,15 +303,16 @@ public class JF_Yuri extends javax.swing.JFrame {
 
     private void ConvertDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConvertDActionPerformed
         // TODO add your handling code here:
-        if(buttonGroup1.isSelected((ButtonModel) KmPMilhas)){
+        if(KmPMilhas.isSelected())  {
             double valore = Integer.parseInt(ValorDistancia.getText());
             double valoreFinale = valore * 0.62;
             JOptionPane.showMessageDialog(this, "Valor: " + valoreFinale +" Milhas" );
-        }
-        if(buttonGroup1.isSelected((ButtonModel) MilhasPKm)){
+        }else if(MilhasPKm.isSelected()){
             double volere = Integer.parseInt(ValorDistancia.getText());
             double volereFinale = volere * 1.609;
             JOptionPane.showMessageDialog(this,"Valor: "+ volereFinale + " Km");
+        }else{
+            JOptionPane.showMessageDialog(this,"Tente Escolher Uma Opção da próxima vez ");
         }
     }//GEN-LAST:event_ConvertDActionPerformed
 
@@ -336,7 +337,7 @@ public class JF_Yuri extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        System.out.println("");
+        
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -358,17 +359,15 @@ public class JF_Yuri extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(JF_Yuri.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-System.out.println("");
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new JF_Yuri().setVisible(true);
-                System.out.println("");
-                System.out.println("");
             }
             
         });
-        System.out.println("");
+        
     }
 
 
