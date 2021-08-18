@@ -7,6 +7,8 @@ package tjframes;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import javax.swing.ButtonModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,6 +32,15 @@ public class JF_Yuri extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
+        buttonGroup5 = new javax.swing.ButtonGroup();
+        buttonGroup6 = new javax.swing.ButtonGroup();
+        buttonGroup7 = new javax.swing.ButtonGroup();
+        buttonGroup8 = new javax.swing.ButtonGroup();
+        buttonGroup9 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         JTF_Idade = new javax.swing.JTextField();
@@ -38,6 +49,14 @@ public class JF_Yuri extends javax.swing.JFrame {
         JTF_Resultado = new javax.swing.JTextField();
         SomenteTexto = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        ValorDistancia = new javax.swing.JTextField();
+        KmPMilhas = new javax.swing.JRadioButton();
+        MilhasPKm = new javax.swing.JRadioButton();
+        ConvertD = new javax.swing.JButton();
+        jcbEstCivil = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        jbEstCivil = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,28 +94,104 @@ public class JF_Yuri extends javax.swing.JFrame {
 
         jTextField1.setName("SomntTextoTexto"); // NOI18N
 
+        jLabel3.setText("Valor");
+        jLabel3.setName("ValorKm"); // NOI18N
+
+        ValorDistancia.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        ValorDistancia.setName("ValorDistancia"); // NOI18N
+        ValorDistancia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ValorDistanciaActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(KmPMilhas);
+        KmPMilhas.setText("De Km Para Milhas");
+        KmPMilhas.setName("KmPMilhas"); // NOI18N
+        KmPMilhas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KmPMilhasActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(MilhasPKm);
+        MilhasPKm.setText("De Milhas Para Km");
+        MilhasPKm.setName("MilhasPKm"); // NOI18N
+        MilhasPKm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MilhasPKmActionPerformed(evt);
+            }
+        });
+
+        ConvertD.setText("Conversão");
+        ConvertD.setName("ConvertD"); // NOI18N
+        ConvertD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConvertDActionPerformed(evt);
+            }
+        });
+
+        jcbEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Solteiro(a)", "Casado(a)", "Divorciado(a)" }));
+        jcbEstCivil.setName("jcbEstCivil"); // NOI18N
+        jcbEstCivil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbEstCivilActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Estado Civil");
+
+        jbEstCivil.setText("Verificar Estado Civil");
+        jbEstCivil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEstCivilActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SomenteTexto, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTF_Idade, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(SomenteTexto)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JTF_Resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JTF_Idade, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addGap(29, 29, 29)
+                        .addComponent(JBCalcDias))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ValorDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JBCalcDias)
-                            .addComponent(JTF_Resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(128, Short.MAX_VALUE))
+                            .addComponent(MilhasPKm)
+                            .addComponent(KmPMilhas)
+                            .addComponent(ConvertD))))
+                .addContainerGap(249, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jbEstCivil)
+                    .addComponent(jcbEstCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(169, 169, 169))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,10 +208,29 @@ public class JF_Yuri extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SomenteTexto)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JBCalcDias)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ValorDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(KmPMilhas, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(MilhasPKm, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ConvertD)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jcbEstCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbEstCivil)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
+
+        jLabel3.getAccessibleContext().setAccessibleName("ValorKm");
+        ValorDistancia.getAccessibleContext().setAccessibleName("ValorDistancia");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -136,22 +250,36 @@ public class JF_Yuri extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    private void ValorDistanciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValorDistanciaActionPerformed
+        // TODO add your handling code here:
+        int distan = Integer.parseInt(ValorDistancia.getText());
+    }//GEN-LAST:event_ValorDistanciaActionPerformed
+
+    private void SomenteTextoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SomenteTextoKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SomenteTextoKeyTyped
+
+    private void SomenteTextoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SomenteTextoKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SomenteTextoKeyPressed
+
     private void JBCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCalcDiasActionPerformed
         // TODO add your handling code here:
         if(JTF_Idade.getText().equalsIgnoreCase("")){
             JTF_Resultado.setForeground(Color.red);
             JTF_Resultado.setText("Trate de Inserir Um Número");
         }else{
-        int idade = Integer.parseInt(JTF_Idade.getText());
-        int dias = idade * 365;
-        
-        if(dias>=0){
-            JTF_Resultado.setForeground(Color.black);
-        }else{
-            JTF_Resultado.setForeground(Color.red);
-        }
-        JTF_Resultado.setText(Integer.toString(dias));
-        JTF_Idade.setText("");
+            int idade = Integer.parseInt(JTF_Idade.getText());
+            int dias = idade * 365;
+
+            if(dias>=0){
+                JTF_Resultado.setForeground(Color.black);
+            }else{
+                JTF_Resultado.setForeground(Color.red);
+            }
+            JTF_Resultado.setText(Integer.toString(dias));
+            JTF_Idade.setText("");
         }
         JTF_Resultado.requestFocus();
     }//GEN-LAST:event_JBCalcDiasActionPerformed
@@ -160,18 +288,48 @@ public class JF_Yuri extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
 
-      this.JBCalcDias.doClick();
+            this.JBCalcDias.doClick();
 
-    }        
+        }
     }//GEN-LAST:event_JTF_IdadeKeyTyped
 
-    private void SomenteTextoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SomenteTextoKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SomenteTextoKeyPressed
+    private void MilhasPKmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MilhasPKmActionPerformed
+        
+    }//GEN-LAST:event_MilhasPKmActionPerformed
 
-    private void SomenteTextoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SomenteTextoKeyTyped
+    private void KmPMilhasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KmPMilhasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SomenteTextoKeyTyped
+    }//GEN-LAST:event_KmPMilhasActionPerformed
+
+    private void ConvertDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConvertDActionPerformed
+        // TODO add your handling code here:
+        if(buttonGroup1.isSelected((ButtonModel) KmPMilhas)){
+            double valore = Integer.parseInt(ValorDistancia.getText());
+            double valoreFinale = valore * 0.62;
+            JOptionPane.showMessageDialog(this, "Valor: " + valoreFinale +" Milhas" );
+        }
+        if(buttonGroup1.isSelected((ButtonModel) MilhasPKm)){
+            double volere = Integer.parseInt(ValorDistancia.getText());
+            double volereFinale = volere * 1.609;
+            JOptionPane.showMessageDialog(this,"Valor: "+ volereFinale + " Km");
+        }
+    }//GEN-LAST:event_ConvertDActionPerformed
+
+    private void jbEstCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEstCivilActionPerformed
+        // TODO add your handling code here:
+        if(jcbEstCivil.getSelectedItem().equals("Selecione")){
+            System.out.println("Nenhum estado civil adicionado");
+        }else{
+            
+            JOptionPane.showMessageDialog(this,"Estado Civil é"+ jcbEstCivil.getSelectedItem());
+        }
+        
+    }//GEN-LAST:event_jbEstCivilActionPerformed
+
+    private void jcbEstCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbEstCivilActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jcbEstCivilActionPerformed
 
     /**JOptionPane.showMessageDialog(this, "A Sua Idade em dias é: "+(idade*365));
      * @param args the command line arguments
@@ -215,14 +373,31 @@ System.out.println("");
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ConvertD;
     private javax.swing.JButton JBCalcDias;
     private javax.swing.JTextField JTF_Idade;
     private javax.swing.JTextField JTF_Resultado;
+    private javax.swing.JRadioButton KmPMilhas;
+    private javax.swing.JRadioButton MilhasPKm;
     private javax.swing.JLabel SomenteTexto;
+    private javax.swing.JTextField ValorDistancia;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.ButtonGroup buttonGroup5;
+    private javax.swing.ButtonGroup buttonGroup6;
+    private javax.swing.ButtonGroup buttonGroup7;
+    private javax.swing.ButtonGroup buttonGroup8;
+    private javax.swing.ButtonGroup buttonGroup9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jbEstCivil;
+    private javax.swing.JComboBox<String> jcbEstCivil;
     // End of variables declaration//GEN-END:variables
 }
 

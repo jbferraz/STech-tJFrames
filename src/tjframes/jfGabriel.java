@@ -7,7 +7,6 @@ package tjframes;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,7 +20,7 @@ public class jfGabriel extends javax.swing.JFrame {
      */
     public jfGabriel() {
         initComponents();
-        
+
     }
 
     /**
@@ -34,6 +33,7 @@ public class jfGabriel extends javax.swing.JFrame {
     private void initComponents() {
 
         grpConverte = new javax.swing.ButtonGroup();
+        jSpinner1 = new javax.swing.JSpinner();
         jPanel1 = new javax.swing.JPanel();
         jbCalcDias = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -52,6 +52,14 @@ public class jfGabriel extends javax.swing.JFrame {
         jcbEstCivil = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jbEstCivil = new javax.swing.JButton();
+        jcbFutebol = new javax.swing.JCheckBox();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
+        JcbVolei = new javax.swing.JCheckBox();
+        jcbBasquete = new javax.swing.JCheckBox();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jatEsportes = new javax.swing.JTextArea();
+        jbEsportes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora JojoFag");
@@ -65,7 +73,6 @@ public class jfGabriel extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(800, 600));
         jPanel1.setName("Calculadora Jojo"); // NOI18N
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 600));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jbCalcDias.setBackground(new java.awt.Color(51, 51, 255));
         jbCalcDias.setText("Calcular em Dias");
@@ -75,14 +82,12 @@ public class jfGabriel extends javax.swing.JFrame {
                 jbCalcDiasActionPerformed(evt);
             }
         });
-        jPanel1.add(jbCalcDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 150, 40));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Microsoft New Tai Lue", 0, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Idade");
         jLabel1.setName("JTFIdade"); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 51, 37, 24));
 
         jScrollPane1.setName(""); // NOI18N
 
@@ -98,34 +103,26 @@ public class jfGabriel extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtfIdade);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 45, 118, 30));
-
         jlResultado.setBackground(new java.awt.Color(255, 255, 255));
         jlResultado.setFont(new java.awt.Font("Microsoft New Tai Lue", 0, 11)); // NOI18N
         jlResultado.setForeground(new java.awt.Color(255, 255, 255));
         jlResultado.setText("Resultado:");
-        jPanel1.add(jlResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 90, -1, -1));
 
         jtfResultado.setEditable(false);
         jtfResultado.setBackground(new java.awt.Color(255, 255, 255));
         jtfResultado.setName("jtfResultado"); // NOI18N
-        jPanel1.add(jtfResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 87, 114, 30));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Valor:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 36, 40, 24));
 
         jtfValor.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setViewportView(jtfValor);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 36, 80, 30));
 
         jrbKm2Milhas.setBackground(new java.awt.Color(0, 0, 0));
         grpConverte.add(jrbKm2Milhas);
         jrbKm2Milhas.setForeground(new java.awt.Color(255, 255, 255));
         jrbKm2Milhas.setSelected(true);
         jrbKm2Milhas.setText("De Km Para Milhas");
-        jPanel1.add(jrbKm2Milhas, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 68, -1, -1));
 
         jrbMilhasParaKM.setBackground(new java.awt.Color(0, 0, 0));
         grpConverte.add(jrbMilhasParaKM);
@@ -137,7 +134,6 @@ public class jfGabriel extends javax.swing.JFrame {
                 jrbMilhasParaKMActionPerformed(evt);
             }
         });
-        jPanel1.add(jrbMilhasParaKM, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 94, -1, -1));
 
         JBconverter.setBackground(new java.awt.Color(255, 28, 28));
         JBconverter.setText("Converter");
@@ -146,15 +142,12 @@ public class jfGabriel extends javax.swing.JFrame {
                 JBconverterActionPerformed(evt);
             }
         });
-        jPanel1.add(JBconverter, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 124, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Calculo De Idade Em Dias");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 200, -1));
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Conversor de Milhas/km");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(356, 12, 141, -1));
 
         jcbEstCivil.setBackground(new java.awt.Color(153, 153, 153));
         jcbEstCivil.setForeground(new java.awt.Color(255, 204, 51));
@@ -164,12 +157,11 @@ public class jfGabriel extends javax.swing.JFrame {
                 jcbEstCivilActionPerformed(evt);
             }
         });
-        jPanel1.add(jcbEstCivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 100, -1));
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Estado Cíivil");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 70, 20));
 
+        jbEstCivil.setBackground(new java.awt.Color(102, 102, 102));
         jbEstCivil.setForeground(new java.awt.Color(255, 255, 255));
         jbEstCivil.setText("Estado Civil?");
         jbEstCivil.addActionListener(new java.awt.event.ActionListener() {
@@ -177,7 +169,175 @@ public class jfGabriel extends javax.swing.JFrame {
                 jbEstCivilActionPerformed(evt);
             }
         });
-        jPanel1.add(jbEstCivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 140, -1));
+
+        jcbFutebol.setForeground(new java.awt.Color(255, 255, 255));
+        jcbFutebol.setText("Futebol");
+        jcbFutebol.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jcbFutebolItemStateChanged(evt);
+            }
+        });
+        jcbFutebol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbFutebolActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Quais Esportes Você Pratica?");
+
+        JcbVolei.setForeground(new java.awt.Color(255, 255, 255));
+        JcbVolei.setText("Vôlei");
+        JcbVolei.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                JcbVoleiItemStateChanged(evt);
+            }
+        });
+        JcbVolei.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JcbVoleiActionPerformed(evt);
+            }
+        });
+
+        jcbBasquete.setForeground(new java.awt.Color(255, 255, 255));
+        jcbBasquete.setText("Basquete");
+        jcbBasquete.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jcbBasqueteItemStateChanged(evt);
+            }
+        });
+
+        jatEsportes.setEditable(false);
+        jatEsportes.setBackground(new java.awt.Color(255, 255, 255));
+        jatEsportes.setColumns(20);
+        jatEsportes.setRows(5);
+        jScrollPane3.setViewportView(jatEsportes);
+
+        jbEsportes.setBackground(new java.awt.Color(102, 102, 102));
+        jbEsportes.setForeground(new java.awt.Color(255, 255, 255));
+        jbEsportes.setText("Listar");
+        jbEsportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEsportesActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlResultado))
+                .addGap(73, 73, 73)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jrbKm2Milhas)
+                            .addComponent(jrbMilhasParaKM)))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(394, 394, 394)
+                .addComponent(JBconverter))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jbCalcDias, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jcbEstCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jbEstCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel6))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jcbFutebol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jcbBasquete, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                        .addComponent(JcbVolei, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jbEsportes))
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel3))
+                    .addComponent(jLabel4))
+                .addGap(1, 1, 1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jlResultado))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(2, 2, 2)
+                        .addComponent(jrbKm2Milhas)
+                        .addGap(3, 3, 3)
+                        .addComponent(jrbMilhasParaKM)))
+                .addGap(7, 7, 7)
+                .addComponent(JBconverter)
+                .addGap(1, 1, 1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(95, 95, 95))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jbCalcDias, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbEstCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16)
+                        .addComponent(jbEstCivil)
+                        .addGap(77, 77, 77)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(jcbFutebol)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jcbBasquete)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JcbVolei)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbEsportes)
+                        .addGap(79, 79, 79))))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -189,7 +349,7 @@ public class jfGabriel extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 624, Short.MAX_VALUE)
         );
 
         pack();
@@ -197,15 +357,15 @@ public class jfGabriel extends javax.swing.JFrame {
 
     private void JBconverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBconverterActionPerformed
         // TODO add your handling code here:
-        double result=0;
-        double valor=Double.parseDouble(jtfValor.getText());
-        if(jrbKm2Milhas.isSelected()){
-            result=valor/1.6;
-        }else if(jrbMilhasParaKM.isSelected()){
-            result= valor*1.6;
-        }        
-        JOptionPane.showMessageDialog(this, "O Resultado é: "+result,"Conversão",JOptionPane.INFORMATION_MESSAGE );
-       
+        double result = 0;
+        double valor = Double.parseDouble(jtfValor.getText());
+        if (jrbKm2Milhas.isSelected()) {
+            result = valor / 1.6;
+        } else if (jrbMilhasParaKM.isSelected()) {
+            result = valor * 1.6;
+        }
+        JOptionPane.showMessageDialog(this, "O Resultado é: " + result, "Conversão", JOptionPane.INFORMATION_MESSAGE);
+
     }//GEN-LAST:event_JBconverterActionPerformed
 
     private void jrbMilhasParaKMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbMilhasParaKMActionPerformed
@@ -222,7 +382,7 @@ public class jfGabriel extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfIdadeKeyTyped
 
     private void jtfIdadeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdadeKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.jbCalcDias.doClick();
         }
     }//GEN-LAST:event_jtfIdadeKeyPressed
@@ -245,7 +405,8 @@ public class jfGabriel extends javax.swing.JFrame {
             jtfResultado.setText(Integer.toString(dias));
             jtfIdade.setText("");
             jtfResultado.requestFocus();
-        } jtfResultado.requestFocus();
+        }
+        jtfResultado.requestFocus();
 
     }//GEN-LAST:event_jbCalcDiasActionPerformed
 
@@ -259,17 +420,70 @@ public class jfGabriel extends javax.swing.JFrame {
 
     private void jbEstCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEstCivilActionPerformed
         // TODO add your handling code here:
-        if(jcbEstCivil.getSelectedItem().equals("Selecione")){
+        if (jcbEstCivil.getSelectedItem().equals("Selecione")) {
             JOptionPane.showMessageDialog(this, "Nenhum estado Cívil Selecionado");
-            
-        }else
-        JOptionPane.showMessageDialog(this, "Seu Estado cívil é: "+jcbEstCivil.getSelectedItem().toString());
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Seu Estado cívil é: " + jcbEstCivil.getSelectedItem().toString());
+        }
     }//GEN-LAST:event_jbEstCivilActionPerformed
-        
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+
+    private void jcbFutebolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbFutebolActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcbFutebolActionPerformed
+
+    private void JcbVoleiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JcbVoleiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JcbVoleiActionPerformed
+
+    private void jbEsportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEsportesActionPerformed
+        if (jatEsportes.getText().equals("")) {
+            jatEsportes.setText("Você não Selecionou um Esporte");
+        } else {
+
+        }
+    }//GEN-LAST:event_jbEsportesActionPerformed
+
+    private void jcbFutebolItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbFutebolItemStateChanged
+        String esportes = jatEsportes.getText();
+        String Texto = jcbFutebol.getText() + "\n";
+        if (jcbFutebol.isSelected()) {
+            jatEsportes.setText(esportes + Texto);
+        } else {
+            esportes = esportes.replace(Texto, "");
+            jatEsportes.setText(esportes);
+
+        }
+    }//GEN-LAST:event_jcbFutebolItemStateChanged
+
+    private void jcbBasqueteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbBasqueteItemStateChanged
+        // TODO add your handling code here:
+        String esportes = jatEsportes.getText();
+        String texto = jcbBasquete.getText() + "\n";
+        if (jcbBasquete.isSelected()) {
+            jatEsportes.setText((esportes + texto));
+
+        } else {
+            esportes = esportes.replace(texto, "");
+            jatEsportes.setText(esportes);
+        }
+    }//GEN-LAST:event_jcbBasqueteItemStateChanged
+
+    private void JcbVoleiItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JcbVoleiItemStateChanged
+    String esportes= jatEsportes.getText();
+    String texto=JcbVolei.getText();
+    if(JcbVolei.isSelected()){
+        jatEsportes.setText(esportes+texto);
+    }else{
+        esportes=esportes.replace(texto,"");
+        jatEsportes.setText((esportes));
+    }
+    }//GEN-LAST:event_JcbVoleiItemStateChanged
+
+/**
+ * @param args the command line arguments
+ */
+public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -280,16 +494,28 @@ public class jfGabriel extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+                
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(jfGabriel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(jfGabriel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(jfGabriel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(jfGabriel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jfGabriel.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        
+
+} catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(jfGabriel.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        
+
+} catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(jfGabriel.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        
+
+} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(jfGabriel.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -304,18 +530,27 @@ public class jfGabriel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBconverter;
+    private javax.swing.JCheckBox JcbVolei;
     private javax.swing.ButtonGroup grpConverte;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JTextArea jatEsportes;
     private javax.swing.JButton jbCalcDias;
+    private javax.swing.JButton jbEsportes;
     private javax.swing.JButton jbEstCivil;
+    private javax.swing.JCheckBox jcbBasquete;
     private javax.swing.JComboBox<String> jcbEstCivil;
+    private javax.swing.JCheckBox jcbFutebol;
     private javax.swing.JLabel jlResultado;
     private javax.swing.JRadioButton jrbKm2Milhas;
     private javax.swing.JRadioButton jrbMilhasParaKM;
