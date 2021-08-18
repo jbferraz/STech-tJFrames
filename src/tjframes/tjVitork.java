@@ -53,7 +53,6 @@ public class tjVitork extends javax.swing.JFrame {
         jbcEstadoCivil = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jbCivil = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -140,15 +139,6 @@ public class tjVitork extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setForeground(new java.awt.Color(255, 0, 0));
-        jButton1.setText("Hacker");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -182,9 +172,7 @@ public class tjVitork extends javax.swing.JFrame {
                                     .addComponent(jrdbKm2m))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(121, 121, 121)
                         .addComponent(jpgHackerr, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,11 +227,7 @@ public class tjVitork extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jtfCalcDias)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jpgHackerr, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jButton1)
-                                        .addGap(88, 88, 88))))
+                                .addComponent(jpgHackerr, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jbConverter)))
                     .addComponent(jtfHacker, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
@@ -262,7 +246,7 @@ public class tjVitork extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
   
-
+ 
     private void jtfCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfCalcDiasActionPerformed
         // TODO add your handling code here:
         //jbfResultado.setText(Integer.toString(idade*365));
@@ -355,13 +339,7 @@ String caracteres="0123456789";
             JOptionPane.showMessageDialog(this,"Estado Civil e "+
                 jbcEstadoCivil.getSelectedItem().toString());
     }//GEN-LAST:event_jbCivilActionPerformed
-    }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       JOptionPane.showMessageDialog(this,jpgHackerr);
-               jpgHackerr.setIcon(new javax.swing.ImageIcon("C:\\Users\\everton\\Downloads\\pc-hack.gif"));// NOI18N
-               jpgHackerr.getIcon();
-    }//GEN-LAST:event_jButton1ActionPerformed
-        
+    }        
               
      
      
@@ -409,7 +387,6 @@ String caracteres="0123456789";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JbfIdade;
     private javax.swing.ButtonGroup grpConverte;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -420,7 +397,7 @@ String caracteres="0123456789";
     private javax.swing.JButton jbConverter;
     private javax.swing.JComboBox<String> jbcEstadoCivil;
     private javax.swing.JTextField jbfResultado;
-    private javax.swing.JLabel jpgHackerr;
+    public javax.swing.JLabel jpgHackerr;
     private javax.swing.JRadioButton jrdbKm2m;
     private javax.swing.JRadioButton jrdbM2km;
     private javax.swing.JButton jtfCalcDias;
