@@ -56,12 +56,12 @@ public class jfJair extends javax.swing.JFrame {
         jcbBasquete = new javax.swing.JCheckBox();
         jbEsportes = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jatEsportes = new javax.swing.JTextArea();
+        jtaEsportes = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Teste JFrame");
 
-        jtfIdade.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jtfIdade.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jtfIdade.setName("jtfIdade"); // NOI18N
         jtfIdade.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -133,17 +133,37 @@ public class jfJair extends javax.swing.JFrame {
         jLabel5.setText("Quais esportes vc pratica?");
 
         jcbFutebol.setText("Futebol");
+        jcbFutebol.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jcbFutebolItemStateChanged(evt);
+            }
+        });
 
         jcbVolei.setText("Vôlei");
+        jcbVolei.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jcbVoleiItemStateChanged(evt);
+            }
+        });
 
         jcbBasquete.setText("Basquete");
+        jcbBasquete.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jcbBasqueteItemStateChanged(evt);
+            }
+        });
 
         jbEsportes.setText("Listar");
+        jbEsportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEsportesActionPerformed(evt);
+            }
+        });
 
-        jatEsportes.setEditable(false);
-        jatEsportes.setColumns(20);
-        jatEsportes.setRows(5);
-        jScrollPane2.setViewportView(jatEsportes);
+        jtaEsportes.setEditable(false);
+        jtaEsportes.setColumns(20);
+        jtaEsportes.setRows(5);
+        jScrollPane2.setViewportView(jtaEsportes);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -329,9 +349,66 @@ public class jfJair extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Nenhum estado civil selecionado!");
         } else {
             JOptionPane.showMessageDialog(this, "Estado Civil é "
-                + jcbEstCivil.getSelectedItem().toString());
+                    + jcbEstCivil.getSelectedItem().toString());
         }
     }//GEN-LAST:event_jbEstCivilActionPerformed
+
+    private void jbEsportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEsportesActionPerformed
+        // TODO add your handling code here:
+        String ep1 = "", ep2 = "", ep3 = "";
+        if (jcbFutebol.isSelected()) {
+            ep1 = jcbFutebol.getText() + "\n";
+        }
+        if (jcbVolei.isSelected()) {
+            ep2 = jcbVolei.getText() + "\n";
+        }
+        if (jcbBasquete.isSelected()) {
+            ep3 = jcbBasquete.getText() + "\n";
+        }
+        JOptionPane.showMessageDialog(this, "Esportes: \n"
+                + ep1
+                + ep2
+                + ep3);
+    }//GEN-LAST:event_jbEsportesActionPerformed
+
+    private void jcbFutebolItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbFutebolItemStateChanged
+        // TODO add your handling code here:
+        String esportes = jtaEsportes.getText();
+
+        String texto = jcbFutebol.getText() + "\n";
+        if (jcbFutebol.isSelected()) {
+            jtaEsportes.setText(esportes + texto);
+        } else {
+            esportes = esportes.replace(texto, "");
+            jtaEsportes.setText(esportes);
+        }
+    }//GEN-LAST:event_jcbFutebolItemStateChanged
+
+    private void jcbVoleiItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbVoleiItemStateChanged
+        // TODO add your handling code here:
+        String esportes = jtaEsportes.getText();
+        String texto = jcbVolei.getText() + "\n";
+
+        if (jcbVolei.isSelected()) {
+            jtaEsportes.setText(esportes + texto);
+        } else {
+            esportes = esportes.replace(texto, "");
+            jtaEsportes.setText(esportes);
+        }
+    }//GEN-LAST:event_jcbVoleiItemStateChanged
+
+    private void jcbBasqueteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbBasqueteItemStateChanged
+        // TODO add your handling code here:
+        String esportes = jtaEsportes.getText();
+        String texto = jcbBasquete.getText() + "\n";
+
+        if (jcbBasquete.isSelected()) {
+            jtaEsportes.setText(esportes + texto);
+        } else {
+            esportes = esportes.replace(texto, "");
+            jtaEsportes.setText(esportes);
+        }
+    }//GEN-LAST:event_jcbBasqueteItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -378,7 +455,6 @@ public class jfJair extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextArea jatEsportes;
     private javax.swing.JButton jbCalcDias;
     private javax.swing.JButton jbConverter;
     private javax.swing.JButton jbEsportes;
@@ -390,6 +466,7 @@ public class jfJair extends javax.swing.JFrame {
     private javax.swing.JLabel jlResultado;
     private javax.swing.JRadioButton jrdbKm2m;
     private javax.swing.JRadioButton jrdbM2Km;
+    private javax.swing.JTextArea jtaEsportes;
     private javax.swing.JTextField jtfIdade;
     private javax.swing.JTextField jtfResultado;
     private javax.swing.JTextField jtfSomTexto;
