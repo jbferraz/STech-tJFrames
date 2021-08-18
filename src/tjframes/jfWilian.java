@@ -34,7 +34,6 @@ public class jfWilian extends javax.swing.JFrame {
     private void initComponents() {
 
         rdbKm2m = new javax.swing.ButtonGroup();
-        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         labelResultado = new javax.swing.JLabel();
@@ -66,13 +65,14 @@ public class jfWilian extends javax.swing.JFrame {
         jtResultadoSigno = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jbGerarSigno = new javax.swing.JButton();
-
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel10 = new javax.swing.JLabel();
+        jcbFutebol = new javax.swing.JCheckBox();
+        jcbVolei = new javax.swing.JCheckBox();
+        jcbBasquete = new javax.swing.JCheckBox();
+        jtEsportes = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtaEsportes = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Wilian");
@@ -80,6 +80,7 @@ public class jfWilian extends javax.swing.JFrame {
         setIconImages(null);
 
         jPanel1.setBackground(new java.awt.Color(90, 93, 95));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setName("Calculadora"); // NOI18N
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -288,6 +289,11 @@ public class jfWilian extends javax.swing.JFrame {
 
         jtResultadoSigno.setEditable(false);
         jtResultadoSigno.setBackground(new java.awt.Color(255, 255, 255));
+        jtResultadoSigno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtResultadoSignoActionPerformed(evt);
+            }
+        });
 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Signo :");
@@ -301,10 +307,49 @@ public class jfWilian extends javax.swing.JFrame {
             }
         });
 
+        jSeparator4.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel10.setFont(new java.awt.Font("Segoe Print", 0, 15)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Quais esportes você pratica ?");
+
+        jcbFutebol.setForeground(new java.awt.Color(255, 255, 255));
+        jcbFutebol.setText("Futebol");
+        jcbFutebol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbFutebolActionPerformed(evt);
+            }
+        });
+
+        jcbVolei.setForeground(new java.awt.Color(255, 255, 255));
+        jcbVolei.setText("Vôlei");
+
+        jcbBasquete.setForeground(new java.awt.Color(255, 255, 255));
+        jcbBasquete.setText("Basquete");
+
+        jtEsportes.setBackground(new java.awt.Color(90, 90, 90));
+        jtEsportes.setForeground(new java.awt.Color(255, 255, 255));
+        jtEsportes.setText("Listar");
+        jtEsportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtEsportesActionPerformed(evt);
+            }
+        });
+
+        jtaEsportes.setEditable(false);
+        jtaEsportes.setBackground(new java.awt.Color(255, 255, 255));
+        jtaEsportes.setColumns(20);
+        jtaEsportes.setForeground(new java.awt.Color(0, 0, 0));
+        jtaEsportes.setLineWrap(true);
+        jtaEsportes.setRows(5);
+        jScrollPane1.setViewportView(jtaEsportes);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator1)
+            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -340,14 +385,10 @@ public class jfWilian extends javax.swing.JFrame {
                             .addGap(21, 21, 21)
                             .addComponent(jbConverter))))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jSeparator1)
+            .addComponent(jSeparator4)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addComponent(jbEstadoCivil)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -361,26 +402,51 @@ public class jfWilian extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                                        .addComponent(jtDiaSigno, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jtMesSigno, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jcbFutebol)
+                                            .addComponent(jcbVolei)
+                                            .addComponent(jcbBasquete))
+                                        .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jbGerarSigno, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel9)
+                                        .addComponent(jLabel10))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel6)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                                                .addComponent(jtDiaSigno, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel8)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jtMesSigno, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addComponent(jbGerarSigno, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(30, 30, 30)
+                                        .addComponent(jLabel9)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jtResultadoSigno, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(38, 38, 38))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(173, 173, 173)
-                                .addComponent(jLabel7)))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(173, 173, 173)
+                                        .addComponent(jLabel7))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(192, 192, 192)
+                                        .addComponent(jbEstadoCivil)))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(202, 202, 202)
+                                .addComponent(jtEsportes)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -437,7 +503,24 @@ public class jfWilian extends javax.swing.JFrame {
                     .addComponent(jtResultadoSigno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jbGerarSigno)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jcbFutebol)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jcbVolei)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jcbBasquete)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addComponent(jtEsportes))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -597,10 +680,6 @@ public class jfWilian extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jtNomeActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jbGerarSignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGerarSignoActionPerformed
         // TODO add your handling code here:
 
@@ -702,6 +781,43 @@ public class jfWilian extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtMesSignoActionPerformed
 
+    private void jcbFutebolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbFutebolActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcbFutebolActionPerformed
+
+    private void jtEsportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtEsportesActionPerformed
+        // TODO add your handling code here:
+        if (jcbFutebol.isSelected() && jcbBasquete.isSelected() && jcbVolei.isSelected()) {
+            jtaEsportes.setText("Futebol\nVôlei\nBasquete");         
+
+        } else if (jcbVolei.isSelected() && jcbBasquete.isSelected()) {
+            jtaEsportes.setText("Vôlei\nBasquete");
+
+        } else if (jcbBasquete.isSelected() && jcbFutebol.isSelected()) {
+            jtaEsportes.setText("Futebol\nBasquete");
+
+        } else if (jcbVolei.isSelected() && jcbFutebol.isSelected()) {
+            jtaEsportes.setText("Futebol\nVôlei");
+            
+        } else if (jcbVolei.isSelected()) {
+            jtaEsportes.setText("Vôlei");
+            
+        } else if (jcbBasquete.isSelected()) {
+            jtaEsportes.setText("Basquete");
+            
+        } else if (jcbFutebol.isSelected()) {
+            jtaEsportes.setText("Futebol");
+            
+        } else {
+            JOptionPane.showMessageDialog(this, "Escolha algum esporte!");
+            jtaEsportes.setText("");
+        }
+    }//GEN-LAST:event_jtEsportesActionPerformed
+
+    private void jtResultadoSignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtResultadoSignoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtResultadoSignoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -739,8 +855,8 @@ public class jfWilian extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ResultadoValor;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -751,21 +867,28 @@ public class jfWilian extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jNome;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JButton jbCalcDias;
     private javax.swing.JButton jbConverter;
     private javax.swing.JButton jbEstadoCivil;
     private javax.swing.JButton jbGerarSigno;
+    private javax.swing.JCheckBox jcbBasquete;
     private javax.swing.JComboBox<String> jcbEstadoCivil;
+    private javax.swing.JCheckBox jcbFutebol;
+    private javax.swing.JCheckBox jcbVolei;
     private javax.swing.JRadioButton jrdbKm2m;
     private javax.swing.JRadioButton jrdbM2km;
     private javax.swing.JTextField jtDiaSigno;
+    private javax.swing.JButton jtEsportes;
     private javax.swing.JTextField jtMesSigno;
     private javax.swing.JTextField jtNome;
     private javax.swing.JTextField jtResultadoSigno;
     private javax.swing.JTextField jtSoTexto;
+    private javax.swing.JTextArea jtaEsportes;
     private javax.swing.JTextField jtfResultado;
     private javax.swing.JTextField jtfidade;
     private javax.swing.JLabel labelEstadoCivil;
