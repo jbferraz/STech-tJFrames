@@ -441,11 +441,24 @@ String caracteres="0123456789";
     }//GEN-LAST:event_jpgHackerrInputMethodTextChanged
 
     private void jbcListarEsportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbcListarEsportesActionPerformed
-       if (jcvListar.getText().equals("")){
-           JOptionPane.showMessageDialog(this,"Vc selecionou nada");
-       }
+      
+       String ep1 = "", ep2 = "", ep3 = "";
+        if (jbcFutebol.isSelected()) {
+            ep1 = jbcFutebol.getText() + "\n";
+        }
+        if (jbcVolei.isSelected()) {
+            ep2 = jbcVolei.getText() + "\n";
+        }
+        if (jbcBasquete.isSelected()) {
+            ep3 = jbcBasquete.getText() + "\n";
+        }
+        JOptionPane.showMessageDialog(this, "Esportes: \n"
+                + ep1
+                + ep2
+                + ep3);
+              
     }//GEN-LAST:event_jbcListarEsportesActionPerformed
-    
+          
     private void jbcBasqueteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbcBasqueteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbcBasqueteActionPerformed
