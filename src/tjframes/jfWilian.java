@@ -6,10 +6,10 @@
 package tjframes;
 
 import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.text.NumberFormat;
 import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -17,11 +17,13 @@ import javax.swing.JOptionPane;
  */
 public class jfWilian extends javax.swing.JFrame {
 
+
     /**
      * Creates new form jfWilian
      */
     public jfWilian() {
         initComponents();
+
     }
 
     /**
@@ -788,7 +790,7 @@ public class jfWilian extends javax.swing.JFrame {
     private void jtEsportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtEsportesActionPerformed
         // TODO add your handling code here:
         if (jcbFutebol.isSelected() && jcbBasquete.isSelected() && jcbVolei.isSelected()) {
-            jtaEsportes.setText("Futebol\nVôlei\nBasquete");         
+            jtaEsportes.setText("Futebol\nVôlei\nBasquete");
 
         } else if (jcbVolei.isSelected() && jcbBasquete.isSelected()) {
             jtaEsportes.setText("Vôlei\nBasquete");
@@ -798,16 +800,16 @@ public class jfWilian extends javax.swing.JFrame {
 
         } else if (jcbVolei.isSelected() && jcbFutebol.isSelected()) {
             jtaEsportes.setText("Futebol\nVôlei");
-            
+
         } else if (jcbVolei.isSelected()) {
             jtaEsportes.setText("Vôlei");
-            
+
         } else if (jcbBasquete.isSelected()) {
             jtaEsportes.setText("Basquete");
-            
+
         } else if (jcbFutebol.isSelected()) {
             jtaEsportes.setText("Futebol");
-            
+
         } else {
             JOptionPane.showMessageDialog(this, "Escolha algum esporte!");
             jtaEsportes.setText("");
@@ -895,4 +897,6 @@ public class jfWilian extends javax.swing.JFrame {
     private javax.swing.JLabel labelResultado;
     private javax.swing.ButtonGroup rdbKm2m;
     // End of variables declaration//GEN-END:variables
+
+
 }
