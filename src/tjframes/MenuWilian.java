@@ -110,12 +110,12 @@ public class MenuWilian {
 
         
         //Create a scrolled text area.
-        output = new JTextArea(5, 30);
+        output = new JTextArea(20, 30);
         output.setEditable(false);
         scrollPane = new JScrollPane(output);
         
         //imagem
-        ImageIcon icon = createImageIcon("../imgs/pc-hack.gif");
+        ImageIcon icon = createImageIcon("../imgs/teste.gif");
         jLabel = new JLabel(icon);
         contentPane.add(jLabel);
         
@@ -139,7 +139,7 @@ public class MenuWilian {
         
 
         //Display the window.
-        frame.setSize(500, 300);
+        frame.setSize(480, 360);
         frame.setVisible(true);
     }
 protected static ImageIcon createImageIcon(String path) {
