@@ -35,15 +35,6 @@ public class MenuGabriel {
         menu = new JMenu("Form Aulas");
         menu.setMnemonic(KeyEvent.VK_A);
         menu.getAccessibleContext().setAccessibleDescription("The ONly menu in this program has menu items");
-        menuBar.add(menu);
-        menuItem = new JMenuItem("Form. José",
-                KeyEvent.VK_T);
-        //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
-        menuItem.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_1, ActionEvent.ALT_MASK));
-        menuItem.getAccessibleContext().setAccessibleDescription(
-                "This doesn't really do anything");
-        menu.add(menuItem);
         
         menuItem = new JMenuItem("Form. Gabriel",
                 KeyEvent.VK_G);
