@@ -35,7 +35,7 @@ public class MenuGabriel {
         menu = new JMenu("Form Aulas");
         menu.setMnemonic(KeyEvent.VK_A);
         menu.getAccessibleContext().setAccessibleDescription("The ONly menu in this program has menu items");
-        
+        menuBar.add(menu);    
         menuItem = new JMenuItem("Form. Gabriel",
                 KeyEvent.VK_G);
         //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
