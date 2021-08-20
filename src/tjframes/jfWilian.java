@@ -149,6 +149,7 @@ public class jfWilian extends javax.swing.JFrame {
             }
         });
 
+        jrdbKm2m.setBackground(new java.awt.Color(90, 93, 95));
         rdbKm2m.add(jrdbKm2m);
         jrdbKm2m.setForeground(new java.awt.Color(255, 255, 255));
         jrdbKm2m.setSelected(true);
@@ -159,6 +160,7 @@ public class jfWilian extends javax.swing.JFrame {
             }
         });
 
+        jrdbM2km.setBackground(new java.awt.Color(90, 93, 95));
         rdbKm2m.add(jrdbM2km);
         jrdbM2km.setForeground(new java.awt.Color(255, 255, 255));
         jrdbM2km.setText("de Milhas para Km");
@@ -187,7 +189,7 @@ public class jfWilian extends javax.swing.JFrame {
             }
         });
 
-        jbConverter.setBackground(new java.awt.Color(90, 90, 90));
+        jbConverter.setBackground(new java.awt.Color(90, 93, 95));
         jbConverter.setForeground(new java.awt.Color(255, 255, 255));
         jbConverter.setText("Converter");
         jbConverter.setToolTipText("");
@@ -315,6 +317,7 @@ public class jfWilian extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Quais esportes você pratica ?");
 
+        jcbFutebol.setBackground(new java.awt.Color(90, 93, 95));
         jcbFutebol.setForeground(new java.awt.Color(255, 255, 255));
         jcbFutebol.setText("Futebol");
         jcbFutebol.addActionListener(new java.awt.event.ActionListener() {
@@ -323,9 +326,11 @@ public class jfWilian extends javax.swing.JFrame {
             }
         });
 
+        jcbVolei.setBackground(new java.awt.Color(90, 93, 95));
         jcbVolei.setForeground(new java.awt.Color(255, 255, 255));
         jcbVolei.setText("Vôlei");
 
+        jcbBasquete.setBackground(new java.awt.Color(90, 93, 95));
         jcbBasquete.setForeground(new java.awt.Color(255, 255, 255));
         jcbBasquete.setText("Basquete");
 
@@ -355,15 +360,11 @@ public class jfWilian extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelResultado))
-                                .addGap(30, 30, 30)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelResultado)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(19, 19, 19)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jbCalcDias, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
