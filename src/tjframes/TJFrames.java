@@ -21,7 +21,7 @@ import javax.swing.KeyStroke;
  *
  * @author jairb
  */
-public class TJFrames {
+public class TJFrames extends JFrame implements ActionListener{
     JTextArea output;
     JScrollPane scrollPane;
     
@@ -48,6 +48,8 @@ public class TJFrames {
                 KeyEvent.VK_1, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("mJose");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
         
         //Gabriel
@@ -58,6 +60,8 @@ public class TJFrames {
                 KeyEvent.VK_2, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("mGabriel");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
         
         //Igor
@@ -68,6 +72,8 @@ public class TJFrames {
                 KeyEvent.VK_3, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("mIgor");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
         
         //Thiago
@@ -78,6 +84,8 @@ public class TJFrames {
                 KeyEvent.VK_4, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("mThiago");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
         
         //Wilian
@@ -88,14 +96,49 @@ public class TJFrames {
                 KeyEvent.VK_5, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("mWilian");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
         
         //Yuri
         menuItem = new JMenuItem("Form. Yuri",
                                  KeyEvent.VK_Y);
+        menuItem.setActionCommand("mYuri");
+        menuItem.addActionListener(this);
+        menu.add(menuItem);
+        
+        //Jair
+        menuItem = new JMenuItem("Form. Jair",
+                                 KeyEvent.VK_Y);
+        menuItem.setActionCommand("mJair");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
         
         return menuBar;
+    }
+    
+    public void actionPerformed(ActionEvent e){
+        if ("mJose".equals(e.getActionCommand())){
+            new tjVitork().setVisible(true);
+        }
+        if ("mGabriel".equals(e.getActionCommand())){
+            new jfGabriel().setVisible(true);
+        }
+        if ("mWilian".equals(e.getActionCommand())){
+            new jfWilian().setVisible(true);
+        }
+        if ("mThiago".equals(e.getActionCommand())){
+            new jfThiago().setVisible(true);
+        }
+        if ("mIgor".equals(e.getActionCommand())){
+            new jfThiago().setVisible(true);
+        }
+        if ("mYuri".equals(e.getActionCommand())){
+            new JF_Yuri().setVisible(true);
+        }
+        if ("mJair".equals(e.getActionCommand())){
+            new jfJair().setVisible(true);
+        }
     }
     
     public Container createContentPane() {
