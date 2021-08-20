@@ -177,7 +177,6 @@ public class tjVitork extends javax.swing.JFrame {
             }
         });
 
-        jpgHackerr.setIcon(new javax.swing.ImageIcon("C:\\Users\\everton\\Downloads\\pc-hack.gif")); // NOI18N
         jpgHackerr.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
