@@ -59,7 +59,6 @@ public class jfGabriel extends javax.swing.JFrame {
         jcbBasquete = new javax.swing.JCheckBox();
         jScrollPane3 = new javax.swing.JScrollPane();
         jatEsportes = new javax.swing.JTextArea();
-        jbEsportes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora JojoFag");
@@ -213,15 +212,6 @@ public class jfGabriel extends javax.swing.JFrame {
         jatEsportes.setRows(5);
         jScrollPane3.setViewportView(jatEsportes);
 
-        jbEsportes.setBackground(new java.awt.Color(102, 102, 102));
-        jbEsportes.setForeground(new java.awt.Color(255, 255, 255));
-        jbEsportes.setText("Listar");
-        jbEsportes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbEsportesActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -271,12 +261,10 @@ public class jfGabriel extends javax.swing.JFrame {
                 .addComponent(jLabel6))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jcbFutebol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jcbBasquete, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                        .addComponent(JcbVolei, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jbEsportes))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jcbFutebol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jcbBasquete, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(JcbVolei, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -334,9 +322,7 @@ public class jfGabriel extends javax.swing.JFrame {
                         .addComponent(jcbBasquete)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(JcbVolei)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbEsportes)
-                        .addGap(79, 79, 79))))
+                        .addGap(122, 122, 122))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -436,14 +422,6 @@ public class jfGabriel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JcbVoleiActionPerformed
 
-    private void jbEsportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEsportesActionPerformed
-        if (jatEsportes.getText().equals("")) {
-            jatEsportes.setText("Você não Selecionou um Esporte");
-        } else {
-
-        }
-    }//GEN-LAST:event_jbEsportesActionPerformed
-
     private void jcbFutebolItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbFutebolItemStateChanged
         String esportes = jatEsportes.getText();
         String Texto = jcbFutebol.getText() + "\n";
@@ -471,7 +449,7 @@ public class jfGabriel extends javax.swing.JFrame {
 
     private void JcbVoleiItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JcbVoleiItemStateChanged
     String esportes= jatEsportes.getText();
-    String texto=JcbVolei.getText();
+    String texto=JcbVolei.getText()+"\n";
     if(JcbVolei.isSelected()){
         jatEsportes.setText(esportes+texto);
     }else{
@@ -546,7 +524,6 @@ public static void main(String args[]) {
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextArea jatEsportes;
     private javax.swing.JButton jbCalcDias;
-    private javax.swing.JButton jbEsportes;
     private javax.swing.JButton jbEstCivil;
     private javax.swing.JCheckBox jcbBasquete;
     private javax.swing.JComboBox<String> jcbEstCivil;
