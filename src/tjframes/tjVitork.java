@@ -436,7 +436,7 @@ String caracteres="0123456789";
     }//GEN-LAST:event_jbCivilActionPerformed
     }
     private void jpgHackerrInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jpgHackerrInputMethodTextChanged
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jpgHackerrInputMethodTextChanged
 
     private void jbcListarEsportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbcListarEsportesActionPerformed
