@@ -32,193 +32,259 @@ public class jfIgor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jtfIdade = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jbCalcDias = new javax.swing.JButton();
-        jtfResultado = new javax.swing.JTextField();
-        jlResultado = new javax.swing.JLabel();
-        jtfSomTexto = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jtfValor = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jrdbKm2m = new javax.swing.JRadioButton();
-        jrdbM2Km = new javax.swing.JRadioButton();
-        jbConverter = new javax.swing.JButton();
-        jcbEstCivil = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
-        jbEstCivil = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jtfIdade2 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jbCalcDias2 = new javax.swing.JButton();
+        jtfResultado2 = new javax.swing.JTextField();
+        jlResultado2 = new javax.swing.JLabel();
+        jtfSomTexto2 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jtfValor2 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jrdbKm2m2 = new javax.swing.JRadioButton();
+        jrdbM2Km2 = new javax.swing.JRadioButton();
+        jbConverter2 = new javax.swing.JButton();
+        jcbEstCivil2 = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
+        jbEstCivil2 = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel15 = new javax.swing.JLabel();
+        jcbFutebol2 = new javax.swing.JCheckBox();
+        jcbVolei2 = new javax.swing.JCheckBox();
+        jcbBasquete2 = new javax.swing.JCheckBox();
+        jbEsportes2 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jtaEsportes2 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jtfIdade.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jtfIdade.setName("jtfIdade"); // NOI18N
-        jtfIdade.addKeyListener(new java.awt.event.KeyAdapter() {
+        jtfIdade2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jtfIdade2.setName("jtfIdade"); // NOI18N
+        jtfIdade2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jtfIdadeKeyPressed(evt);
+                jtfIdade2KeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jtfIdadeKeyTyped(evt);
+                jtfIdade2KeyTyped(evt);
             }
         });
 
-        jLabel1.setText("Idade:");
-        jLabel1.setName(""); // NOI18N
+        jLabel11.setText("Idade:");
+        jLabel11.setName(""); // NOI18N
 
-        jbCalcDias.setText("Calcular Dias");
-        jbCalcDias.setName("jbCalcDias"); // NOI18N
-        jbCalcDias.addActionListener(new java.awt.event.ActionListener() {
+        jbCalcDias2.setText("Calcular Dias");
+        jbCalcDias2.setName("jbCalcDias"); // NOI18N
+        jbCalcDias2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbCalcDiasActionPerformed(evt);
+                jbCalcDias2ActionPerformed(evt);
             }
         });
 
-        jtfResultado.setEditable(false);
-        jtfResultado.setName("jtfResultado"); // NOI18N
+        jtfResultado2.setEditable(false);
+        jtfResultado2.setName("jtfResultado"); // NOI18N
 
-        jlResultado.setText("Resultado:");
+        jlResultado2.setText("Resultado:");
 
-        jtfSomTexto.setName("jtfSomTexto"); // NOI18N
-        jtfSomTexto.addKeyListener(new java.awt.event.KeyAdapter() {
+        jtfSomTexto2.setName("jtfSomTexto"); // NOI18N
+        jtfSomTexto2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jtfSomTextoKeyTyped(evt);
+                jtfSomTexto2KeyTyped(evt);
             }
         });
 
-        jLabel3.setText("Somente Texto");
+        jLabel12.setText("Somente Texto");
 
-        jtfValor.addKeyListener(new java.awt.event.KeyAdapter() {
+        jtfValor2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jtfValorKeyTyped(evt);
+                jtfValor2KeyTyped(evt);
             }
         });
 
-        jLabel2.setText("Valor");
+        jLabel13.setText("Valor");
 
-        jrdbKm2m.setSelected(true);
-        jrdbKm2m.setText("de Km para Milhas");
+        jrdbKm2m2.setText("de Km para Milhas");
 
-        jrdbM2Km.setText("de Milhas para Km");
+        jrdbM2Km2.setText("de Milhas para Km");
 
-        jbConverter.setText("Converter");
-        jbConverter.addActionListener(new java.awt.event.ActionListener() {
+        jbConverter2.setText("Converter");
+        jbConverter2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbConverterActionPerformed(evt);
+                jbConverter2ActionPerformed(evt);
             }
         });
 
-        jcbEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Solteiro (a)", "Casado (a)", "Divorciado (a)", "Viuvo (a)" }));
+        jcbEstCivil2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Solteiro (a)", "Casado (a)", "Divorciado (a)", "Viuvo (a)", "Amizade Colorida kkkk" }));
 
-        jLabel4.setText("Estado Civil");
+        jLabel14.setText("Estado Civil");
 
-        jbEstCivil.setText("Estado Civil?");
-        jbEstCivil.setName("jbCalcDias"); // NOI18N
-        jbEstCivil.addActionListener(new java.awt.event.ActionListener() {
+        jbEstCivil2.setText("Estado Civil?");
+        jbEstCivil2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbEstCivilActionPerformed(evt);
+                jbEstCivil2ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbEstCivil))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        jLabel15.setText("Quais esportes vc pratica?");
+
+        jcbFutebol2.setText("Futebol");
+        jcbFutebol2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jcbFutebol2ItemStateChanged(evt);
+            }
+        });
+
+        jcbVolei2.setText("Vôlei");
+        jcbVolei2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jcbVolei2ItemStateChanged(evt);
+            }
+        });
+
+        jcbBasquete2.setText("Basquete");
+        jcbBasquete2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jcbBasquete2ItemStateChanged(evt);
+            }
+        });
+
+        jbEsportes2.setText("Listar");
+        jbEsportes2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEsportes2ActionPerformed(evt);
+            }
+        });
+
+        jtaEsportes2.setEditable(false);
+        jtaEsportes2.setColumns(20);
+        jtaEsportes2.setRows(5);
+        jScrollPane4.setViewportView(jtaEsportes2);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator3)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jbCalcDias)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jlResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))
-                                    .addComponent(jLabel4))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jbEstCivil2)
+                            .addComponent(jbCalcDias2)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jlResultado2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtfSomTexto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                                    .addComponent(jtfResultado, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jtfIdade, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jcbEstCivil, 0, 137, Short.MAX_VALUE))))))
-                .addGap(52, 52, 52)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtfValor))
-                    .addComponent(jrdbKm2m, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jrdbM2Km, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbConverter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(85, 85, 85))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jcbEstCivil2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jtfSomTexto2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jtfResultado2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jtfIdade2, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jtfValor2))
+                            .addComponent(jrdbKm2m2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jrdbM2Km2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbConverter2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jcbFutebol2)
+                                    .addComponent(jcbVolei2)
+                                    .addComponent(jcbBasquete2)
+                                    .addComponent(jbEsportes2))
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfIdade2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)
+                    .addComponent(jtfValor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlResultado)
-                    .addComponent(jrdbKm2m))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfResultado2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlResultado2)
+                    .addComponent(jrdbKm2m2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfSomTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jrdbM2Km))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfSomTexto2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12)
+                    .addComponent(jrdbM2Km2))
                 .addGap(15, 15, 15)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbCalcDias)
-                    .addComponent(jbConverter))
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jcbEstCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbCalcDias2)
+                    .addComponent(jbConverter2))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jcbEstCivil2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jbEstCivil2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jcbFutebol2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jcbVolei2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jcbBasquete2))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jbEstCivil)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addComponent(jbEsportes2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtfIdadeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdadeKeyPressed
+    private void jtfIdade2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdade2KeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.jbCalcDias.doClick();
         }
-    }//GEN-LAST:event_jtfIdadeKeyPressed
+    }//GEN-LAST:event_jtfIdade2KeyPressed
 
-    private void jtfIdadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdadeKeyTyped
+    private void jtfIdade2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIdade2KeyTyped
         // TODO add your handling code here:
         String caracteres = "0123456789";
         if (!caracteres.contains(evt.getKeyChar() + "")) {
             evt.consume();
             JOptionPane.showMessageDialog(this, "Somente números!");
         }
-    }//GEN-LAST:event_jtfIdadeKeyTyped
+    }//GEN-LAST:event_jtfIdade2KeyTyped
 
-    private void jbCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcDiasActionPerformed
+    private void jbCalcDias2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcDias2ActionPerformed
         // TODO add your handling code here:
         if (jtfIdade.getText().equals("")) {
             jtfResultado.setForeground(Color.red);
@@ -232,25 +298,25 @@ public class jfIgor extends javax.swing.JFrame {
             jtfIdade.setText("");
         }
         jtfIdade.requestFocus();
-    }//GEN-LAST:event_jbCalcDiasActionPerformed
+    }//GEN-LAST:event_jbCalcDias2ActionPerformed
 
-    private void jtfSomTextoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfSomTextoKeyTyped
-        // Somonte Texto
+    private void jtfSomTexto2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfSomTexto2KeyTyped
+        // Somente Texto
         String caracteres = "0123456789";
         if (caracteres.contains(evt.getKeyChar() + "")) {
             evt.consume();
         }
-    }//GEN-LAST:event_jtfSomTextoKeyTyped
+    }//GEN-LAST:event_jtfSomTexto2KeyTyped
 
-    private void jtfValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfValorKeyTyped
+    private void jtfValor2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfValor2KeyTyped
         // TODO add your handling code here:
         String caracteres = "0123456789.";
         if (!caracteres.contains(evt.getKeyChar() + "")) {
             evt.consume();
         }
-    }//GEN-LAST:event_jtfValorKeyTyped
+    }//GEN-LAST:event_jtfValor2KeyTyped
 
-    private void jbConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConverterActionPerformed
+    private void jbConverter2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConverter2ActionPerformed
         // TODO add your handling code here:
         if (!jtfValor.getText().equals("")) {
             double result = 0;
@@ -261,24 +327,81 @@ public class jfIgor extends javax.swing.JFrame {
             } else if (jrdbM2Km.isSelected()) {
                 result = valor * 1.6;
             }
-            JOptionPane.showMessageDialog(this, "O resulado é: " +
-                NumberFormat.getInstance().format(result),
+            JOptionPane.showMessageDialog(this, "O resulado é: "
+                + NumberFormat.getInstance().format(result),
                 "Conversão", JOptionPane.INFORMATION_MESSAGE);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "Valor não pode ser vazio");
             jtfValor.requestFocus();
         }
-    }//GEN-LAST:event_jbConverterActionPerformed
+    }//GEN-LAST:event_jbConverter2ActionPerformed
 
-    private void jbEstCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEstCivilActionPerformed
+    private void jbEstCivil2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEstCivil2ActionPerformed
         // TODO add your handling code here:
         if (jcbEstCivil.getSelectedItem().equals("Selecione")) {
-        JOptionPane.showMessageDialog(this, "Selecione um estado civil !!!");
-     }else{
-        JOptionPane.showMessageDialog(this, "Seu estado civil é " +
-                jcbEstCivil.getSelectedItem().toString());
-     }
-    }//GEN-LAST:event_jbEstCivilActionPerformed
+            JOptionPane.showMessageDialog(this, "Nenhum estado civil selecionado!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Estado Civil é "
+                + jcbEstCivil.getSelectedItem().toString());
+        }
+    }//GEN-LAST:event_jbEstCivil2ActionPerformed
+
+    private void jcbFutebol2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbFutebol2ItemStateChanged
+        // TODO add your handling code here:
+        String esportes = jtaEsportes.getText();
+
+        String texto = jcbFutebol.getText() + "\n";
+        if (jcbFutebol.isSelected()) {
+            jtaEsportes.setText(esportes + texto);
+        } else {
+            esportes = esportes.replace(texto, "");
+            jtaEsportes.setText(esportes);
+        }
+    }//GEN-LAST:event_jcbFutebol2ItemStateChanged
+
+    private void jcbVolei2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbVolei2ItemStateChanged
+        // TODO add your handling code here:
+        String esportes = jtaEsportes.getText();
+        String texto = jcbVolei.getText() + "\n";
+
+        if (jcbVolei.isSelected()) {
+            jtaEsportes.setText(esportes + texto);
+        } else {
+            esportes = esportes.replace(texto, "");
+            jtaEsportes.setText(esportes);
+        }
+    }//GEN-LAST:event_jcbVolei2ItemStateChanged
+
+    private void jcbBasquete2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbBasquete2ItemStateChanged
+        // TODO add your handling code here:
+        String esportes = jtaEsportes.getText();
+        String texto = jcbBasquete.getText() + "\n";
+
+        if (jcbBasquete.isSelected()) {
+            jtaEsportes.setText(esportes + texto);
+        } else {
+            esportes = esportes.replace(texto, "");
+            jtaEsportes.setText(esportes);
+        }
+    }//GEN-LAST:event_jcbBasquete2ItemStateChanged
+
+    private void jbEsportes2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEsportes2ActionPerformed
+        // TODO add your handling code here:
+        String ep1 = "", ep2 = "", ep3 = "";
+        if (jcbFutebol.isSelected()) {
+            ep1 = jcbFutebol.getText() + "\n";
+        }
+        if (jcbVolei.isSelected()) {
+            ep2 = jcbVolei.getText() + "\n";
+        }
+        if (jcbBasquete.isSelected()) {
+            ep3 = jcbBasquete.getText() + "\n";
+        }
+        JOptionPane.showMessageDialog(this, "Esportes: \n"
+            + ep1
+            + ep2
+            + ep3);
+    }//GEN-LAST:event_jbEsportes2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -317,20 +440,100 @@ public class jfIgor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JButton jbCalcDias;
+    private javax.swing.JButton jbCalcDias1;
+    private javax.swing.JButton jbCalcDias2;
+    private javax.swing.JButton jbCalcDias3;
     private javax.swing.JButton jbConverter;
+    private javax.swing.JButton jbConverter1;
+    private javax.swing.JButton jbConverter2;
+    private javax.swing.JButton jbConverter3;
+    private javax.swing.JButton jbEsportes;
+    private javax.swing.JButton jbEsportes1;
+    private javax.swing.JButton jbEsportes2;
+    private javax.swing.JButton jbEsportes3;
     private javax.swing.JButton jbEstCivil;
+    private javax.swing.JButton jbEstCivil1;
+    private javax.swing.JButton jbEstCivil2;
+    private javax.swing.JButton jbEstCivil3;
+    private javax.swing.JCheckBox jcbBasquete;
+    private javax.swing.JCheckBox jcbBasquete1;
+    private javax.swing.JCheckBox jcbBasquete2;
+    private javax.swing.JCheckBox jcbBasquete3;
     private javax.swing.JComboBox<String> jcbEstCivil;
+    private javax.swing.JComboBox<String> jcbEstCivil1;
+    private javax.swing.JComboBox<String> jcbEstCivil2;
+    private javax.swing.JComboBox<String> jcbEstCivil3;
+    private javax.swing.JCheckBox jcbFutebol;
+    private javax.swing.JCheckBox jcbFutebol1;
+    private javax.swing.JCheckBox jcbFutebol2;
+    private javax.swing.JCheckBox jcbFutebol3;
+    private javax.swing.JCheckBox jcbVolei;
+    private javax.swing.JCheckBox jcbVolei1;
+    private javax.swing.JCheckBox jcbVolei2;
+    private javax.swing.JCheckBox jcbVolei3;
     private javax.swing.JLabel jlResultado;
+    private javax.swing.JLabel jlResultado1;
+    private javax.swing.JLabel jlResultado2;
+    private javax.swing.JLabel jlResultado3;
     private javax.swing.JRadioButton jrdbKm2m;
+    private javax.swing.JRadioButton jrdbKm2m1;
+    private javax.swing.JRadioButton jrdbKm2m2;
+    private javax.swing.JRadioButton jrdbKm2m3;
     private javax.swing.JRadioButton jrdbM2Km;
+    private javax.swing.JRadioButton jrdbM2Km1;
+    private javax.swing.JRadioButton jrdbM2Km2;
+    private javax.swing.JRadioButton jrdbM2Km3;
+    private javax.swing.JTextArea jtaEsportes;
+    private javax.swing.JTextArea jtaEsportes1;
+    private javax.swing.JTextArea jtaEsportes2;
+    private javax.swing.JTextArea jtaEsportes3;
     private javax.swing.JTextField jtfIdade;
+    private javax.swing.JTextField jtfIdade1;
+    private javax.swing.JTextField jtfIdade2;
+    private javax.swing.JTextField jtfIdade3;
     private javax.swing.JTextField jtfResultado;
+    private javax.swing.JTextField jtfResultado1;
+    private javax.swing.JTextField jtfResultado2;
+    private javax.swing.JTextField jtfResultado3;
     private javax.swing.JTextField jtfSomTexto;
+    private javax.swing.JTextField jtfSomTexto1;
+    private javax.swing.JTextField jtfSomTexto2;
+    private javax.swing.JTextField jtfSomTexto3;
     private javax.swing.JTextField jtfValor;
+    private javax.swing.JTextField jtfValor1;
+    private javax.swing.JTextField jtfValor2;
+    private javax.swing.JTextField jtfValor3;
     // End of variables declaration//GEN-END:variables
 }
