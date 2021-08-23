@@ -3,6 +3,7 @@ package tjframes;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -22,7 +23,7 @@ import javax.swing.KeyStroke;
  *
  * @author Gabriel Lopes
  */
-public class MenuGabriel {
+public class MenuGabriel extends JFrame implements ActionListener {
 
     JTextArea output;
     JScrollPane scrollPane;
@@ -36,55 +37,104 @@ public class MenuGabriel {
         menu.setMnemonic(KeyEvent.VK_A);
         menu.getAccessibleContext().setAccessibleDescription("The ONly menu in this program has menu items");
         menuBar.add(menu);    
+       menuItem = new JMenuItem("Form. José",
+                                 KeyEvent.VK_J);
+        //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
+        menuItem.setAccelerator(KeyStroke.getKeyStroke(
+                KeyEvent.VK_1, ActionEvent.ALT_MASK));
+        menuItem.getAccessibleContext().setAccessibleDescription(
+                "This doesn't really do anything");
+        menuItem.setActionCommand("mJose");
+        menuItem.addActionListener(this);
+        menu.add(menuItem);
+        
+        //Gabriel
         menuItem = new JMenuItem("Form. Gabriel",
-                KeyEvent.VK_G);
+                                 KeyEvent.VK_G);
         //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
         menuItem.setAccelerator(KeyStroke.getKeyStroke(
                 KeyEvent.VK_2, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("mGabriel");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
+        
+        //Igor
         menuItem = new JMenuItem("Form. Igor",
-                KeyEvent.VK_I);
+                                 KeyEvent.VK_I);
         //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
         menuItem.setAccelerator(KeyStroke.getKeyStroke(
                 KeyEvent.VK_3, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("mIgor");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
-         menuItem = new JMenuItem("Form. Willian",
-                KeyEvent.VK_W);
+        
+        //Thiago
+        menuItem = new JMenuItem("Form. Thiago",
+                                 KeyEvent.VK_T);
         //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
         menuItem.setAccelerator(KeyStroke.getKeyStroke(
                 KeyEvent.VK_4, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("mThiago");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
-        menuItem = new JMenuItem("Form. Thiago",
-                KeyEvent.VK_T);
+        
+        //Wilian
+        menuItem = new JMenuItem("Form. Wilian",
+                                 KeyEvent.VK_W);
         //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
         menuItem.setAccelerator(KeyStroke.getKeyStroke(
                 KeyEvent.VK_5, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("mWilian");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
-        menuItem = new JMenuItem("Form. José",
-                KeyEvent.VK_J);
-        //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
-        menuItem.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_5, ActionEvent.ALT_MASK));
-        menuItem.getAccessibleContext().setAccessibleDescription(
-                "This doesn't really do anything");
-        menu.add(menuItem);
+        
+        //Yuri
         menuItem = new JMenuItem("Form. Yuri",
-                KeyEvent.VK_Y);
-        //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
-        menuItem.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_6, ActionEvent.ALT_MASK));
-        menuItem.getAccessibleContext().setAccessibleDescription(
-                "This doesn't really do anything");
+                                 KeyEvent.VK_Y);
+        menuItem.setActionCommand("mYuri");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
+        
+        //Jair
+        menuItem = new JMenuItem("Form. Jair",
+                                 KeyEvent.VK_Y);
+        menuItem.setActionCommand("mJair");
+        menuItem.addActionListener(this);
+        menu.add(menuItem);
+        
         return menuBar;
+    }
+    
+    public void actionPerformed(ActionEvent e){
+        if ("mJose".equals(e.getActionCommand())){
+            new tjVitork().setVisible(true);
+        }
+        if ("mGabriel".equals(e.getActionCommand())){
+            new jfGabriel().setVisible(true);
+        }
+        if ("mWilian".equals(e.getActionCommand())){
+            new jfWilian().setVisible(true);
+        }
+        if ("mThiago".equals(e.getActionCommand())){
+            new jfThiago().setVisible(true);
+        }
+        if ("mIgor".equals(e.getActionCommand())){
+            new jfThiago().setVisible(true);
+        }
+        if ("mYuri".equals(e.getActionCommand())){
+            new JF_Yuri().setVisible(true);
+        }
+        if ("mJair".equals(e.getActionCommand())){
+            new jfJair().setVisible(true);
+        }
     }
 
     public Container createContentPane() {
@@ -131,3 +181,5 @@ public class MenuGabriel {
         });
     }
 }
+
+
