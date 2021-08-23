@@ -139,6 +139,7 @@ public class TJFrames extends JFrame implements ActionListener{
         if ("mJair".equals(e.getActionCommand())){
             new jfJair().setVisible(true);
         }
+        
     }
     
     public Container createContentPane() {
