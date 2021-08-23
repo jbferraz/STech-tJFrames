@@ -6,9 +6,12 @@
 package tjframes;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.text.NumberFormat;
 import javax.swing.JOptionPane;
+import static javax.swing.UIManager.getIcon;
 
 /**
  *
@@ -42,10 +45,22 @@ public class tjVitork extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jrdbKm2m = new javax.swing.JRadioButton();
         jrdbM2km = new javax.swing.JRadioButton();
-        jLabel3 = new javax.swing.JLabel();
         jtfHacker = new javax.swing.JLabel();
         jbConverter = new javax.swing.JButton();
         jtfValor = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jbcEstadoCivil = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        jbCivil = new javax.swing.JButton();
+        jbcFutebol = new javax.swing.JCheckBox();
+        jLabel3 = new javax.swing.JLabel();
+        jbcVolei = new javax.swing.JCheckBox();
+        jbcBasquete = new javax.swing.JCheckBox();
+        jpgHackerr = new javax.swing.JLabel();
+        jbcListarEsportes = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jcvListar = new javax.swing.JTextArea();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,9 +111,6 @@ public class tjVitork extends javax.swing.JFrame {
         jrdbM2km.setForeground(new java.awt.Color(255, 153, 0));
         jrdbM2km.setText("de Milhas para km");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\everton\\Downloads\\pc-hack.gif")); // NOI18N
-        jLabel3.setText("jLabel3");
-
         jbConverter.setBackground(new java.awt.Color(153, 153, 153));
         jbConverter.setForeground(new java.awt.Color(255, 0, 0));
         jbConverter.setText("Converter");
@@ -115,75 +127,211 @@ public class tjVitork extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel4.setText("CALCULADORA TECH:");
+
+        jbcEstadoCivil.setForeground(new java.awt.Color(255, 102, 0));
+        jbcEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Solteiro(a)", "Casado(a)", "Viuvo(a)", "Divorciado(a)", "Amizade Colorida", " " }));
+
+        jLabel5.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel5.setText("Estado Civil");
+
+        jbCivil.setBackground(new java.awt.Color(153, 153, 153));
+        jbCivil.setForeground(new java.awt.Color(255, 0, 0));
+        jbCivil.setText("Status");
+        jbCivil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCivilActionPerformed(evt);
+            }
+        });
+
+        jbcFutebol.setForeground(new java.awt.Color(51, 255, 51));
+        jbcFutebol.setText("Futebol");
+        jbcFutebol.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jbcFutebolItemStateChanged(evt);
+            }
+        });
+
+        jLabel3.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel3.setText("Quais esportes voce pratica?");
+
+        jbcVolei.setForeground(new java.awt.Color(51, 255, 51));
+        jbcVolei.setText("Volei");
+        jbcVolei.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jbcVoleiItemStateChanged(evt);
+            }
+        });
+
+        jbcBasquete.setForeground(new java.awt.Color(51, 255, 51));
+        jbcBasquete.setText("Basquete");
+        jbcBasquete.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jbcBasqueteItemStateChanged(evt);
+            }
+        });
+        jbcBasquete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbcBasqueteActionPerformed(evt);
+            }
+        });
+
+        jpgHackerr.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                jpgHackerrInputMethodTextChanged(evt);
+            }
+        });
+
+        jbcListarEsportes.setBackground(new java.awt.Color(153, 153, 153));
+        jbcListarEsportes.setForeground(new java.awt.Color(255, 0, 0));
+        jbcListarEsportes.setText("Listar");
+        jbcListarEsportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbcListarEsportesActionPerformed(evt);
+            }
+        });
+
+        jcvListar.setColumns(20);
+        jcvListar.setRows(5);
+        jScrollPane1.setViewportView(jcvListar);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(133, 133, 133)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jtfHacker))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtfCalcDias)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabell, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JbfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jbfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabell, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JbfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(50, 50, 50)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(12, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jrdbM2km, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jrdbKm2m)
-                            .addComponent(jbConverter))
-                        .addGap(31, 31, 31))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jrdbM2km, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jrdbKm2m))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jbcEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jbCivil)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(jtfCalcDias)
+                        .addGap(243, 243, 243)
+                        .addComponent(jbConverter)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 874, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jbcFutebol)
+                                    .addComponent(jbcVolei)
+                                    .addComponent(jbcBasquete)
+                                    .addComponent(jbcListarEsportes))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jpgHackerr, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jtfHacker)
+                .addGap(55, 55, 55))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JbfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabell)
-                    .addComponent(jLabel2)
-                    .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jrdbKm2m))
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfCalcDias)
-                    .addComponent(jrdbM2km))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jbcEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(jbCivil))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jbConverter)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabell)
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel1))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(JbfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jbfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jrdbKm2m))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jrdbM2km)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jtfCalcDias))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jbConverter)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jbcFutebol)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jbcVolei)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jbcBasquete)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jbcListarEsportes))
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jpgHackerr, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jtfHacker))))
+                        .addComponent(jtfHacker)
+                        .addGap(203, 203, 203))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,7 +341,7 @@ public class tjVitork extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
   
-
+ 
     private void jtfCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfCalcDiasActionPerformed
         // TODO add your handling code here:
         //jbfResultado.setText(Integer.toString(idade*365));
@@ -278,8 +426,96 @@ String caracteres="0123456789";
         }
     }//GEN-LAST:event_jbConverterActionPerformed
 
+    private void jbCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCivilActionPerformed
+        if(jbcEstadoCivil.getSelectedItem().equals("Selecione")){
+            JOptionPane.showMessageDialog(this, "Nenhum estado civil selecionado");
+            
+        }else{
+            JOptionPane.showMessageDialog(this,"Estado Civil e "+
+                jbcEstadoCivil.getSelectedItem().toString());
+    }//GEN-LAST:event_jbCivilActionPerformed
+    }
+    private void jpgHackerrInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jpgHackerrInputMethodTextChanged
+        
+    }//GEN-LAST:event_jpgHackerrInputMethodTextChanged
+
+    private void jbcListarEsportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbcListarEsportesActionPerformed
+      
+       String ep1 = "", ep2 = "", ep3 = "";
+        if (jbcFutebol.isSelected()) {
+            ep1 = jbcFutebol.getText() + "\n";
+        }
+        if (jbcVolei.isSelected()) {
+            ep2 = jbcVolei.getText() + "\n";
+        }
+        if (jbcBasquete.isSelected()) {
+            ep3 = jbcBasquete.getText() + "\n";
+        }
+        JOptionPane.showMessageDialog(this, "Esportes: \n"
+                + ep1
+                + ep2
+                + ep3);
               
-     
+    }//GEN-LAST:event_jbcListarEsportesActionPerformed
+          
+    private void jbcBasqueteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbcBasqueteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbcBasqueteActionPerformed
+
+    private void jbcFutebolItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jbcFutebolItemStateChanged
+       String esporte = jcvListar.getText();
+        String texto = jbcFutebol.getText( )+"\n";
+        
+        if(jbcFutebol.isSelected()){
+
+      jcvListar.setText(esporte + texto);
+
+    }else{
+
+      esporte= esporte.replace(texto, "");
+
+      jcvListar.setText(esporte);
+
+    }
+    }//GEN-LAST:event_jbcFutebolItemStateChanged
+
+    private void jbcVoleiItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jbcVoleiItemStateChanged
+        String esporte = jcvListar.getText();
+        String texto = jbcVolei.getText( )+"\n";
+        
+        if(jbcVolei.isSelected()){
+
+      jcvListar.setText(esporte + texto);
+
+    }else{
+
+      esporte= esporte.replace(texto, "");
+
+      jcvListar.setText(esporte);
+
+    }
+    }//GEN-LAST:event_jbcVoleiItemStateChanged
+
+    private void jbcBasqueteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jbcBasqueteItemStateChanged
+        String esporte = jcvListar.getText();
+        String texto = jbcBasquete.getText( )+"\n";
+        
+        if(jbcBasquete.isSelected())
+            {
+
+      jcvListar.setText(esporte + texto);
+
+    }else{
+
+      esporte= esporte.replace(texto, "");
+
+      jcvListar.setText(esporte);
+
+    }
+    }//GEN-LAST:event_jbcBasqueteItemStateChanged
+           
+              
+    
      
         
     
@@ -328,10 +564,22 @@ String caracteres="0123456789";
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabell;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton jbCivil;
     private javax.swing.JButton jbConverter;
+    private javax.swing.JCheckBox jbcBasquete;
+    private javax.swing.JComboBox<String> jbcEstadoCivil;
+    private javax.swing.JCheckBox jbcFutebol;
+    private javax.swing.JButton jbcListarEsportes;
+    private javax.swing.JCheckBox jbcVolei;
     private javax.swing.JTextField jbfResultado;
+    private javax.swing.JTextArea jcvListar;
+    public javax.swing.JLabel jpgHackerr;
     private javax.swing.JRadioButton jrdbKm2m;
     private javax.swing.JRadioButton jrdbM2km;
     private javax.swing.JButton jtfCalcDias;

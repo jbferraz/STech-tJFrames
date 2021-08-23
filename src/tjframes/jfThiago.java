@@ -5,10 +5,11 @@
  */
 package tjframes;
 
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import java.awt.Color;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -34,6 +35,7 @@ public class jfThiago extends javax.swing.JFrame {
     private void initComponents() {
 
         jbGroup = new javax.swing.ButtonGroup();
+        jButton1 = new javax.swing.JButton();
         jlIdade = new javax.swing.JLabel();
         jbCalcDias = new javax.swing.JButton();
         jtfIdade = new javax.swing.JTextField();
@@ -45,10 +47,26 @@ public class jfThiago extends javax.swing.JFrame {
         jrdbKm2m = new javax.swing.JRadioButton();
         jrdbM2Km = new javax.swing.JRadioButton();
         jbConverter = new javax.swing.JButton();
+        jcbEstCivil = new javax.swing.JComboBox<>();
+        jlEstCivil = new javax.swing.JLabel();
+        jbEstCivil = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jlEsportes = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jatEsportes = new javax.swing.JTextArea();
+        jbEsportes = new javax.swing.JButton();
+        jcbFutebol = new javax.swing.JCheckBox();
+        jcbVolei = new javax.swing.JCheckBox();
+        jcbBasquete = new javax.swing.JCheckBox();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setBounds(new java.awt.Rectangle(0, 0, 500, 4));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setForeground(java.awt.Color.white);
         setName("tela"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(500, 480));
 
         jlIdade.setText("Idade:");
         jlIdade.setName("jlIdade"); // NOI18N
@@ -99,57 +117,165 @@ public class jfThiago extends javax.swing.JFrame {
             }
         });
 
+        jcbEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Solteiro(a)", "Casado(a)", "Divorciado(a)", "Viúvo(a)" }));
+        jcbEstCivil.setToolTipText("");
+        jcbEstCivil.setName(""); // NOI18N
+
+        jlEstCivil.setText("Estado Civil");
+
+        jbEstCivil.setText("Estado Civil?");
+        jbEstCivil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEstCivilActionPerformed(evt);
+            }
+        });
+
+        jlEsportes.setText("Quais esportes você pratica?");
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        jatEsportes.setColumns(20);
+        jatEsportes.setRows(5);
+        jatEsportes.setTabSize(1);
+        jScrollPane1.setViewportView(jatEsportes);
+
+        jbEsportes.setText("Listar");
+        jbEsportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEsportesActionPerformed(evt);
+            }
+        });
+
+        jcbFutebol.setText("Futebol");
+        jcbFutebol.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jcbFutebolItemStateChanged(evt);
+            }
+        });
+
+        jcbVolei.setText("Vôlei");
+        jcbVolei.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jcbVoleiItemStateChanged(evt);
+            }
+        });
+
+        jcbBasquete.setText("Basquete");
+        jcbBasquete.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jcbBasqueteItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlResultado)
-                    .addComponent(jlIdade))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbCalcDias)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jtfIdade, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                        .addComponent(jtfResultado)))
-                .addGap(69, 69, 69)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jlValor)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jbEstCivil)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jlResultado)
+                                            .addComponent(jlIdade))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jtfIdade)
+                                            .addComponent(jtfResultado)
+                                            .addComponent(jbCalcDias, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jlEstCivil)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jcbEstCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(64, 64, 64)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jrdbKm2m)
+                                            .addComponent(jrdbM2Km)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jlValor)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(52, 52, 52)
+                                        .addComponent(jbConverter, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jlEsportes))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jcbBasquete)
+                                .addComponent(jcbFutebol, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jcbVolei, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jbEsportes))
                         .addGap(18, 18, 18)
-                        .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jrdbKm2m)
-                    .addComponent(jrdbM2Km)
-                    .addComponent(jbConverter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlIdade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jtfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(90, 90, 90))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlValor))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jrdbKm2m)
+                        .addGap(18, 18, 18)
+                        .addComponent(jrdbM2Km)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jbConverter)
+                            .addComponent(jbCalcDias))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlIdade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jtfIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jlValor)
-                    .addComponent(jtfValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jlEstCivil)
+                    .addComponent(jcbEstCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jbEstCivil)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jlEsportes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jrdbKm2m)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jlResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jtfResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jrdbM2Km)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbConverter)
-                    .addComponent(jbCalcDias))
-                .addGap(33, 33, 33))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jcbFutebol)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jcbVolei)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jcbBasquete)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jbEsportes)
+                        .addGap(61, 61, 61))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49))))
         );
 
         pack();
@@ -159,33 +285,14 @@ public class jfThiago extends javax.swing.JFrame {
 
     private void jbCalcDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcDiasActionPerformed
         // TODO add your handling code here:
-//        if (!jtfIdade.getText().equals("")) {
-//            int dias = (Integer.parseInt(jtfIdade.getText()) * 365);
-//            if (dias > 0) {
-//                jtfResultado.setForeground(Color.black);
-//                jtfResultado.setText(Integer.toString(dias));
-//                jtfIdade.requestFocus();
-//                jtfIdade.setText("");
-//            }
-//        } else {
-//            JOptionPane.showMessageDialog(this, "Campo não pode ser em branco!");
-//        }
 
-if (!jtfValor.getText().equals("")) {
-            double result = 0;
-            double valor = Double.parseDouble(jtfValor.getText());
-            
-            if (jrdbKm2m.isSelected()) {
-                result = valor / 1.6;
-            } else if (jrdbM2Km.isSelected()) {
-                result = valor * 1.6;
-            }
-            JOptionPane.showMessageDialog(this, "O resulado é: " + 
-                    NumberFormat.getInstance().format(result),
-                    "Conversão", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-            JOptionPane.showMessageDialog(this, "Valor não pode ser vazio");
+        if (!jtfIdade.getText().equals("")) {
+            short idade = Short.parseShort(jtfIdade.getText());
+            jtfResultado.setText(Integer.toString(idade * 365));
+        } else {
+            JOptionPane.showMessageDialog(this, "O campo não pode estar vazio");
             jtfValor.requestFocus();
+
         }
 
     }//GEN-LAST:event_jbCalcDiasActionPerformed
@@ -208,7 +315,7 @@ if (!jtfValor.getText().equals("")) {
     private void jbConverterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConverterActionPerformed
         DecimalFormat df = new DecimalFormat("0.00");
         double resultado = 0;
-        
+
         if (!jtfValor.getText().equals("")) {
             Double valor = Double.parseDouble(jtfValor.getText());
 
@@ -217,20 +324,83 @@ if (!jtfValor.getText().equals("")) {
             } else if (jrdbM2Km.isSelected()) {
                 resultado = (valor) * 1.6;
             }
-            JOptionPane.showMessageDialog(this, "O resultado é " + df.format(resultado), "Conversão", JOptionPane.INFORMATION_MESSAGE);
+            if (resultado > 0) {
+                JOptionPane.showMessageDialog(this, "O resultado é " + df.format(resultado), "Conversão", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Digite um valor maior que 0");
+            }
+
         } else {
-            JOptionPane.showMessageDialog(this, "Campo não pode ser em branco!");
+            JOptionPane.showMessageDialog(this, "O campo não pode estar vazio");
         }
 
-        
+
     }//GEN-LAST:event_jbConverterActionPerformed
 
     private void jtfValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfValorKeyTyped
-        String caracteres = "0123456789";
+        String caracteres = "0123456789.";
         if (!caracteres.contains(evt.getKeyChar() + "")) {
             evt.consume();
         }
     }//GEN-LAST:event_jtfValorKeyTyped
+
+    private void jbEstCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEstCivilActionPerformed
+        // TODO add your handling code here:
+        if (!jcbEstCivil.getSelectedItem().equals("Selecione")) {
+            JOptionPane.showMessageDialog(this, "O estado civil é " + jcbEstCivil.getSelectedItem());
+        }
+    }//GEN-LAST:event_jbEstCivilActionPerformed
+
+    private void jbEsportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEsportesActionPerformed
+        // TODO add your handling code here
+        String e1 = "", e2 = "", e3 = "", mensagem = "Esportes:";
+        if (jcbFutebol.isSelected()) {
+            e1 = jcbFutebol.getText() + "\n";
+        }
+        if (jcbVolei.isSelected()) {
+            e2 = jcbVolei.getText() + "\n";
+        }
+        if (jcbBasquete.isSelected()) {
+            e3 = jcbBasquete.getText() + "\n";
+        }
+        if (e1.equals("") && e2.equals("") && e3.equals("")) {
+            mensagem = "Nenhum esporte selecionado";
+        }
+        JOptionPane.showMessageDialog(this, mensagem + "\n" + e1 + e2 + e3);
+    }//GEN-LAST:event_jbEsportesActionPerformed
+
+    private void jcbFutebolItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbFutebolItemStateChanged
+        // TODO add your handling code here:
+        String esportes = jatEsportes.getText(), texto = jcbFutebol.getText() + "\n";
+        if (jcbFutebol.isSelected()) {
+            jatEsportes.setText(esportes + texto);
+        } else {
+            esportes = esportes.replace(texto, "");
+            jatEsportes.setText(esportes);
+        }
+    }//GEN-LAST:event_jcbFutebolItemStateChanged
+
+    private void jcbVoleiItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbVoleiItemStateChanged
+        // TODO add your handling code here:
+        String esportes = jatEsportes.getText(), texto = jcbVolei.getText() + "\n";
+        if (jcbVolei.isSelected()) {
+            jatEsportes.setText(esportes + texto);
+        } else {
+            esportes = esportes.replace(texto, "");
+            jatEsportes.setText(esportes);
+        }
+    }//GEN-LAST:event_jcbVoleiItemStateChanged
+
+    private void jcbBasqueteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbBasqueteItemStateChanged
+        // TODO add your handling code here:
+        String esportes = jatEsportes.getText(), texto = jcbBasquete.getText() + "\n";
+        if (jcbBasquete.isSelected()) {
+            jatEsportes.setText(esportes + texto);
+        } else {
+            esportes = esportes.replace(texto, "");
+            jatEsportes.setText(esportes);
+        }
+    }//GEN-LAST:event_jcbBasqueteItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -266,7 +436,7 @@ if (!jtfValor.getText().equals("")) {
                 jfThiago tela = new jfThiago();
                 tela.setTitle("Calculadora de dias");
 
-                tela.setLocation(500, 320);
+                tela.setLocation(450, 200);
                 tela.setVisible(true);
 
             }
@@ -274,10 +444,22 @@ if (!jtfValor.getText().equals("")) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextArea jatEsportes;
     private javax.swing.JButton jbCalcDias;
     private javax.swing.JButton jbConverter;
+    private javax.swing.JButton jbEsportes;
+    private javax.swing.JButton jbEstCivil;
     private javax.swing.ButtonGroup jbGroup;
+    private javax.swing.JCheckBox jcbBasquete;
+    private javax.swing.JComboBox<String> jcbEstCivil;
+    private javax.swing.JCheckBox jcbFutebol;
+    private javax.swing.JCheckBox jcbVolei;
+    private javax.swing.JLabel jlEsportes;
+    private javax.swing.JLabel jlEstCivil;
     private javax.swing.JLabel jlIdade;
     private javax.swing.JLabel jlResultado;
     private javax.swing.JLabel jlValor;
