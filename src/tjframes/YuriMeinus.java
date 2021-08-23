@@ -15,14 +15,16 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
+import javax.swing.JLabel;
 
 /**
  *
  * @author Yuri
  */
-public class YuriMeinus {
+public class YuriMeinus extends JFrame implements ActionListener {
     JTextArea output;
     JScrollPane scrollPane;
+    JLabel jLabel;
     
     public JMenuBar createMenuBar() {
         JMenuBar menuBar;
@@ -49,6 +51,8 @@ public class YuriMeinus {
                 KeyEvent.VK_1, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("menuJose");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
         
         /*Yuri*/
@@ -61,12 +65,14 @@ public class YuriMeinus {
                 KeyEvent.VK_2, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("menuYuri");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
         
         
         /*William*/
          //a group of JMenuItems
-        menuItem = new JMenuItem("Forme-te, William!",
+        menuItem = new JMenuItem("Forme-te, Willian!",
                                  KeyEvent.VK_W);
         
         //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
@@ -74,6 +80,8 @@ public class YuriMeinus {
                 KeyEvent.VK_3, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("menuWilian");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
         
         /*Igor*/
@@ -86,6 +94,8 @@ public class YuriMeinus {
                 KeyEvent.VK_4, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("menuIgor");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
         
         /*Thiago*/
@@ -98,6 +108,8 @@ public class YuriMeinus {
                 KeyEvent.VK_5, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("menuThiago");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
         
         /*Gabriel*/
@@ -110,10 +122,44 @@ public class YuriMeinus {
                 KeyEvent.VK_6, ActionEvent.ALT_MASK));
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
+        menuItem.setActionCommand("menuGabriel");
+        menuItem.addActionListener(this);
         menu.add(menuItem);
         
         return menuBar;
 }
+    
+    public void actionPerformed(ActionEvent e) {
+        if ("menuJose".equals(e.getActionCommand())) {
+            tjVitork jose = new tjVitork();
+            jose.setVisible(true);
+            jose.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        }
+        if ("menuGabriel".equals(e.getActionCommand())) {
+            jfGabriel gabriel = new jfGabriel();
+            gabriel.setVisible(true);
+            gabriel.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        }
+        if ("menuThiago".equals(e.getActionCommand())) {
+            jfThiago thiago = new jfThiago();
+            thiago.setVisible(true);
+            thiago.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        }
+        if ("menuWilian".equals(e.getActionCommand())) {
+            jfWilian wilian = new jfWilian();
+            wilian.setVisible(true);
+            wilian.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        }
+        if ("menuYuri".equals(e.getActionCommand())) {
+            JF_Yuri yuri = new JF_Yuri();
+            yuri.setVisible(true);
+            yuri.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        }
+        if ("menuIgor".equals(e.getActionCommand())) {
+            /*à espera de arquivos de igor */
+        }
+    }
+    
     
      public Container createContentPane() {
         //Create the content-pane-to-be.
