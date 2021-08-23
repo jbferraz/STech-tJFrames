@@ -106,7 +106,6 @@ public class jfJair extends javax.swing.JFrame {
         jLabel2.setText("Valor");
 
         grpConverte.add(jrdbKm2m);
-        jrdbKm2m.setSelected(true);
         jrdbKm2m.setText("de Km para Milhas");
 
         grpConverte.add(jrdbM2Km);
