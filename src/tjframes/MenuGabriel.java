@@ -36,9 +36,9 @@ public class MenuGabriel extends JFrame implements ActionListener {
         menu = new JMenu("Form Aulas");
         menu.setMnemonic(KeyEvent.VK_A);
         menu.getAccessibleContext().setAccessibleDescription("The ONly menu in this program has menu items");
-        menuBar.add(menu);    
-       menuItem = new JMenuItem("Form. José",
-                                 KeyEvent.VK_J);
+        menuBar.add(menu);
+        menuItem = new JMenuItem("Form. José",
+                KeyEvent.VK_J);
         //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
         menuItem.setAccelerator(KeyStroke.getKeyStroke(
                 KeyEvent.VK_1, ActionEvent.ALT_MASK));
@@ -47,10 +47,10 @@ public class MenuGabriel extends JFrame implements ActionListener {
         menuItem.setActionCommand("mJose");
         menuItem.addActionListener(this);
         menu.add(menuItem);
-        
+
         //Gabriel
         menuItem = new JMenuItem("Form. Gabriel",
-                                 KeyEvent.VK_G);
+                KeyEvent.VK_G);
         //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
         menuItem.setAccelerator(KeyStroke.getKeyStroke(
                 KeyEvent.VK_2, ActionEvent.ALT_MASK));
@@ -59,10 +59,10 @@ public class MenuGabriel extends JFrame implements ActionListener {
         menuItem.setActionCommand("mGabriel");
         menuItem.addActionListener(this);
         menu.add(menuItem);
-        
+
         //Igor
         menuItem = new JMenuItem("Form. Igor",
-                                 KeyEvent.VK_I);
+                KeyEvent.VK_I);
         //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
         menuItem.setAccelerator(KeyStroke.getKeyStroke(
                 KeyEvent.VK_3, ActionEvent.ALT_MASK));
@@ -71,10 +71,10 @@ public class MenuGabriel extends JFrame implements ActionListener {
         menuItem.setActionCommand("mIgor");
         menuItem.addActionListener(this);
         menu.add(menuItem);
-        
+
         //Thiago
         menuItem = new JMenuItem("Form. Thiago",
-                                 KeyEvent.VK_T);
+                KeyEvent.VK_T);
         //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
         menuItem.setAccelerator(KeyStroke.getKeyStroke(
                 KeyEvent.VK_4, ActionEvent.ALT_MASK));
@@ -83,10 +83,10 @@ public class MenuGabriel extends JFrame implements ActionListener {
         menuItem.setActionCommand("mThiago");
         menuItem.addActionListener(this);
         menu.add(menuItem);
-        
+
         //Wilian
         menuItem = new JMenuItem("Form. Wilian",
-                                 KeyEvent.VK_W);
+                KeyEvent.VK_W);
         //menuItem.setMnemonic(KeyEvent.VK_T); //used constructor instead
         menuItem.setAccelerator(KeyStroke.getKeyStroke(
                 KeyEvent.VK_5, ActionEvent.ALT_MASK));
@@ -95,45 +95,59 @@ public class MenuGabriel extends JFrame implements ActionListener {
         menuItem.setActionCommand("mWilian");
         menuItem.addActionListener(this);
         menu.add(menuItem);
-        
+
         //Yuri
         menuItem = new JMenuItem("Form. Yuri",
-                                 KeyEvent.VK_Y);
+                KeyEvent.VK_Y);
         menuItem.setActionCommand("mYuri");
         menuItem.addActionListener(this);
         menu.add(menuItem);
-        
+
         //Jair
         menuItem = new JMenuItem("Form. Jair",
-                                 KeyEvent.VK_Y);
+                KeyEvent.VK_Y);
         menuItem.setActionCommand("mJair");
         menuItem.addActionListener(this);
         menu.add(menuItem);
-        
+
         return menuBar;
     }
-    
-    public void actionPerformed(ActionEvent e){
-        if ("mJose".equals(e.getActionCommand())){
-            new tjVitork().setVisible(true);
+
+    public void actionPerformed(ActionEvent e) {
+        if ("mJose".equals(e.getActionCommand())) {
+            tjVitork jv = new tjVitork();
+            jv.setVisible(true);
+            jv.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         }
-        if ("mGabriel".equals(e.getActionCommand())){
-            new jfGabriel().setVisible(true);
+        if ("mGabriel".equals(e.getActionCommand())) {
+            jfGabriel gabriel= new jfGabriel();
+            gabriel.setVisible(true);
+            gabriel.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         }
-        if ("mWilian".equals(e.getActionCommand())){
-            new jfWilian().setVisible(true);
+        if ("mWilian".equals(e.getActionCommand())) {
+            jfWilian wil = new jfWilian();
+            wil.setVisible(true);
+            wil.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         }
-        if ("mThiago".equals(e.getActionCommand())){
-            new jfThiago().setVisible(true);
+        if ("mThiago".equals(e.getActionCommand())) {
+            jfThiago thiago = new jfThiago();
+            thiago.setVisible(true);
+            thiago.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         }
-        if ("mIgor".equals(e.getActionCommand())){
-            new jfThiago().setVisible(true);
+        if ("mIgor".equals(e.getActionCommand())) {
+             jfThiago igor = new jfThiago();
+            igor.setVisible(true);
+            igor.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         }
-        if ("mYuri".equals(e.getActionCommand())){
-            new JF_Yuri().setVisible(true);
+        if ("mYuri".equals(e.getActionCommand())) {
+              JF_Yuri yuri = new JF_Yuri();
+            yuri.setVisible(true);
+            yuri.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         }
-        if ("mJair".equals(e.getActionCommand())){
-            new jfJair().setVisible(true);
+        if ("mJair".equals(e.getActionCommand())) {
+           jfJair jair = new jfJair();
+            jair.setVisible(true);
+            jair.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         }
     }
 
@@ -181,5 +195,3 @@ public class MenuGabriel extends JFrame implements ActionListener {
         });
     }
 }
-
-
